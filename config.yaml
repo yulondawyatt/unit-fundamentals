@@ -9,7 +9,7 @@ sequence:
         - kind: deck
         - kind: recording
     - name: Introduction to Algorithms
-      pursuit_path: introduction-to-algorithms
+      pursuit_path: intro-to-algorithms
       kind: lesson
       activity: canvas_text
       activity_description: "To complete this lab, you will need to write an algorithm in plain language. You will not need to write any code to complete this Lab.
@@ -22,8 +22,8 @@ sequence:
         - kind: guide
           pursuit_path: computer-setup
         - kind: recording
-    - name: Introductory JavaScript
-      pursuit_path: introductory-javascript
+    - name: Introduction to JavaScript
+      pursuit_path: intro-to-javascript
       kind: lesson
       activity: replit
     - name: Control Flow
@@ -83,9 +83,9 @@ sequence:
     - name: Collaborative Programming
       pursuit_path: collaborative-programming
       kind: lesson
-      activity: replit
-    - name: Introductory Command Line
-      pursuit_path: introductory-command-line
+      activity: repository
+    - name: Introduction to the Command Line
+      pursuit_path: intro-to-command-line
       kind: lesson
       activity: repository
     - name: Git
