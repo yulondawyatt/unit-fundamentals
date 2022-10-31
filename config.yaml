@@ -83,7 +83,7 @@ sequence:
     - name: Collaborative Programming
       pursuit_path: collaborative-programming
       kind: lesson
-      activity: repository
+      activity: replit
     - name: Introductory Command Line
       pursuit_path: introductory-command-line
       kind: lesson
