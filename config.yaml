@@ -96,6 +96,14 @@ sequence:
       pursuit_path: github
       kind: lesson
       activity: repository
+    - name: Submit GitHub Username
+      pursuit_path: github
+      activity: canvas_text
+      canvas_description:   "Once you have completed signing up for GitHub, submit your GitHub username
+      
+      so we can give you access to all the course materials available
+         
+      on GitHub."
     - name: Markdown
       pursuit_path: markdown
       kind: lesson
