@@ -98,12 +98,14 @@ sequence:
       activity: repository
     - name: Submit GitHub Username
       pursuit_path: github
-      activity: canvas_text
-      canvas_description:   "Once you have completed signing up for GitHub, submit your GitHub username
+      activity: task
+      canvas_description:   "<p>Once you sign up for GitHub, submit the URL to your GitHub profile. It should have the following format, where 
       
-      so we can give you access to all the course materials available
-         
-      on GitHub."
+      <code>&lt;YOUR-USERNAME&gt;</code> is replaced with your username.</p>
+      
+      <pre>https://github.com/&lt;YOUR-USERNAME&gt;</pre>
+      
+      <p>You should be able to copy and paste from the location bar in your browser.</p>"
     - name: Markdown
       pursuit_path: markdown
       kind: lesson
