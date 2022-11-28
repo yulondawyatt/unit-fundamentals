@@ -26,7 +26,7 @@ sequence:
     - name: Replit Setup
       elements:
         - kind: guide
-          pursuit_path: computer-setup
+          pursuit_path: external-tools
           pursuit_subpath: replit
         - kind: recording
     - name: Introduction to JavaScript
@@ -108,7 +108,7 @@ sequence:
     - name: GitHub Setup
       elements:
         - kind: guide
-          pursuit_path: computer-setup
+          pursuit_path: external-tools
           pursuit_subpath: github
         - kind: recording
     - name: GitHub
