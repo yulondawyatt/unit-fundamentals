@@ -267,7 +267,7 @@ The three logical operators are:
 
 - AND, written as `&&`
 - OR, written as `||`
-- NOT, writen as `!`.
+- NOT, written as `!`.
 
 ### The AND (&&) Operator
 
