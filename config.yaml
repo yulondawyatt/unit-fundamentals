@@ -165,7 +165,7 @@ sequence:
         - kind: guide
           pursuit_path: external-tools
           pursuit_subpath: markdown
-      - kind: recording
+        - kind: recording
     - name: JavaScript on Your Machine # Block 4
       pursuit_path: javascript-on-your-machine
       kind: lesson
