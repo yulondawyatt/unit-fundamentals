@@ -128,8 +128,8 @@ sequence:
     - name: Local Environment Setup # Block 1
       elements:
         - kind: guide
-            pursuit_path: computer-setup
-            pursuit_subpath: local-environment
+          pursuit_path: computer-setup
+          pursuit_subpath: local-environment
         - kind: recording
     - name: Introduction to the Command Line # Block 1
       pursuit_path: intro-to-command-line
