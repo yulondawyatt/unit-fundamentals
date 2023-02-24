@@ -131,6 +131,12 @@ sequence:
           pursuit_path: computer-setup
           pursuit_subpath: local-environment
         - kind: recording
+    - name: Markdown # Block 1
+      elements:
+        - kind: guide
+          pursuit_path: external-tools
+          pursuit_subpath: markdown
+        - kind: recording
     - name: Introduction to the Command Line # Block 1
       pursuit_path: intro-to-command-line
       kind: lesson
@@ -160,12 +166,7 @@ sequence:
 
       <p>You should be able to copy and paste from the location bar in your browser.</p>"
       points_possible: 0
-    - name: Markdown # Block N/A
-      elements:
-        - kind: guide
-          pursuit_path: external-tools
-          pursuit_subpath: markdown
-        - kind: recording
+
     - name: JavaScript on Your Machine # Block 4
       pursuit_path: javascript-on-your-machine
       kind: lesson
@@ -179,7 +180,7 @@ sequence:
       kind: lesson
       activity: repository
     - name: TBD NATIVE ARRAY METHODS OR INSTRUCTOR LED REVIEW SESSION # Block 7 
-      pursuit_path: accumulator-pattern
+      pursuit_path: # tbd
       kind: lesson
       activity: repository
     - name: Review Day # Block 8
