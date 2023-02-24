@@ -178,7 +178,7 @@ sequence:
       pursuit_path: # tbd
       kind: lesson
       activity: repository
-     - name: TBD NATIVE ARRAY METHODS OR INSTRUCTOR LED REVIEW SESSION # Block 7 
+    - name: TBD NATIVE ARRAY METHODS OR INSTRUCTOR LED REVIEW SESSION # Block 7 
       pursuit_path: accumulator-pattern
       kind: lesson
       activity: repository
