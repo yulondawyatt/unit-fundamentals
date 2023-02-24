@@ -4,10 +4,12 @@
 
 By the end of this lesson you should be able to:
 
+- Describe the importance of creating standards
 - Describe the role of comments in software development.
-- Interpret JSDoc function comments.
-- Describe the role of tests in software development.
-- Interpret test output in order to take actionable steps in code.
+- Be able to read code comments that are in the style of JS Docs
+- Describe the role of tests and how they can help when writing functions in JavaScript.
+- Write simple tests using basic JavaScript.
+- Interpret Jest test output in order to take actionable steps in code.
 
 ---
 

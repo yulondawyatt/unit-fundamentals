@@ -2,7 +2,7 @@
 
 ## Learning Objectives
 
-By the end of this lesson you should be able to:
+By the end of this lesson, you should be able to:
 
 - Describe what it means for an expression to return a value.
 - Identify the evaluated values of common methods.
@@ -14,7 +14,7 @@ By the end of this lesson you should be able to:
 
 - What is the difference between expressions and statements? For example, what is the difference between an `if` statement and a ternary expression?
 
-- In your own words, describe why both the variable `rating` and the `rating` key inside of the `soda` object will be equal to `4` in the code below.
+- In your own words, describe why both the variable `rating` and the `rating` key inside the `soda` object will be equal to `4` in the code below.
 
   ```js
   const soda = { name: "Sprite" };

@@ -2,7 +2,7 @@
 
 ## Learning Objectives
 
-By the end of this lesson you should be able to:
+By the end of this lesson, you should be able to:
 
 - Describe what NodeJS is and why it's important.
 - Install NodeJS on your local machine through Homebrew.
@@ -20,57 +20,57 @@ By the end of this lesson you should be able to:
 
 - How can you check which version of `node` you have?
 
-- Create a new `.js` file and put the following inside of it.
+- Create a new `.js` file and put the following inside.
 
-  ```js
-  function addFruit(fruits, fruit) {
-    fruits.push(fruit);
-    return fruits;
-  }
+```js
+function addFruit(fruits, fruit) {
+  fruits.push(fruit);
+  return fruits;
+}
 
-  const fruits = ["🍓", "🍐", "🍎"];
-  addFruit(fruits, "🥝");
-  ```
+const fruits = ["🍓", "🍐", "🍎"];
+addFruit(fruits, "🥝");
+```
 
-  How can you run this file from the command line?
+How can you run this file from the command line?
 
-- When you run this file, nothing is shown on the command line. How can you update the file so that it prints the response to your terminal window?
+- Nothing is shown on the command line when you run this file. How can you update the file to print the response to your terminal window?
 
-- Try adding the following line inside of your file. What gets logged out? What _data type_ is `process`?
+- Try adding the following line inside your file. What gets logged out? What _data type_ is `process`?
 
-  ```js
-  console.log(process);
-  ```
+```js
+console.log(process);
+```
 
 - Try adding the following inside of your file. What gets logged out? What _data type_ is `process.argv`?
 
-  ```js
-  console.log(process.argv);
-  ```
+```js
+console.log(process.argv);
+```
 
 - What will always be the first and second elements of `process.argv`?
 
-- Update your `.js` file so that it contains the code below.
+- Update your `.js` file to contain the code below.
 
-  ```js
-  function addFruit(fruits, fruit) {
-    fruits.push(fruit);
-    return fruits;
-  }
+```js
+function addFruit(fruits, fruit) {
+  fruits.push(fruit);
+  return fruits;
+}
 
-  const fruits = ["🍓", "🍐", "🍎"];
-  const input = process.argv[2];
-  if (input) {
-    let result = addFruit(fruits, input);
-    console.log(result);
-  } else {
-    console.log("No fruit added...");
-  }
-  ```
+const fruits = ["🍓", "🍐", "🍎"];
+const input = process.argv[2];
+if (input) {
+  let result = addFruit(fruits, input);
+  console.log(result);
+} else {
+  console.log("No fruit added...");
+}
+```
 
-  How can you change what you run on the command line so that a new fruit is added to the array?
+How can you change what you run on the command line so that a new fruit is added to the array?
 
-- After running the code and adding a fruit, your file will not change. This means your changes are not permanent. Why is this?
+- After running the code and adding fruit, your file will not change. This means your changes are not permanent. Why is this?
 
 - How can you open the NodeJS REPL?
 

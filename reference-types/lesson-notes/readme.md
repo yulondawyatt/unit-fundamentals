@@ -2,7 +2,7 @@
 
 ## Learning Objectives
 
-By the end of this lesson you should be able to:
+By the end of this lesson, you should be able to:
 
 - Differentiate between primitive and reference types.
 - Mentally evaluate code blocks that use primitive and reference types.
