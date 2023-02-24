@@ -1,4 +1,4 @@
-## Introductory Command Line
+# Introductory Command Line
 
 ## Introduction
 
