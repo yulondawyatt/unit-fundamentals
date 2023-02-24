@@ -2,16 +2,12 @@
 
 ## Learning Objectives
 
-By the end of this lesson you should be able to:
-
+- Explain the purpose and utility of loops
 - Write a `while` loop with a variable number of iterations.
 - Write a `for` loop with a variable number of iterations.
-- Write `while` and `for` loops to loop over arrays.
 - Use the `break` and `continue` keywords to modify loop execution.
-- Write `for...of` loops to iterate over arrays.
-- Write `for...in` loops to iterate over objects.
 
----
+<hr>
 
 ## Guiding Questions
 
@@ -78,85 +74,3 @@ By the end of this lesson you should be able to:
 - When does the increment expression of a `for` loop run?
 
 - What conditions would need to happen for a `for` loop to run infinitely?
-
-- Recall that arrays are zero indexed. How can you dynamically access the last index of an array?
-
-- Take a look at the following code. Before running it, make a guess as to what you think it will do.
-
-  ```js
-  function checkBedQuality(bedQualities) {
-    console.log("Checking bed qualities...");
-    for (let index = 0; index < bedQualities.length; index++) {
-      const quality = bedQualities[index];
-      console.log(`This bed is too ${quality}...`);
-    }
-  }
-
-  checkBedQuality(["soft", "soft", "firm"]);
-  ```
-
-- What would happen if instead of the condition being `index < bedQualities.length`, it was `index <= bedQualities.length`? Why?
-
-- What would happen if instead of the initial expression being `let index = 0`, it was `let index = 1`? Why?
-
-- What would happen if instead of the increment expression being `index++`, it was `index + 1`? Why?
-
-- Take a look at the following code. Before running it, make a guess as to what you think it will do.
-
-  ```js
-  function checkBedQuality(bedQualities) {
-    console.log("Checking bed qualities...");
-    for (let index = 0; index < bedQualities.length; index++) {
-      const quality = bedQualities[index];
-      if (quality === "perfect") {
-        console.log("This bed is perfect!");
-      } else {
-        console.log(`This bed is too ${quality}...`);
-      }
-    }
-  }
-
-  checkBedQuality(["soft", "soft", "perfect", "firm"]);
-  ```
-
-- In the code above, how could you stop the execution of the loop once a `"perfect"` bed is found? There are at least two ways to do so.
-
-- Imagine an array is inputted into the code above with the following contents:
-
-  ```js
-  const qualities = ["", "perfect", "firm"];
-  ```
-
-  How could you use the `continue` keyword to skip over the empty string so that nothing is logged when it shows up?
-
-- How does a `for...of` loop compare to a regular `for` loop? What are some benefits of each?
-
-- What can a `for...in` loop do that other loops cannot?
-
-- Take a look at the following code. Before running it, make a guess as to what you think it will do.
-
-  ```js
-  function printBedStats(bed) {
-    for (let key in bed) {
-      let value = bed[key];
-      console.log(`${key}: ${value}`);
-    }
-  }
-
-  printBedStats({ brand: "Casper", rating: 3.9 });
-  ```
-
-- Take a look at the following code. Before running it, make a guess as to what you think it will do.
-
-  ```js
-  function printBedStats(bed) {
-    let result = [];
-    for (let key in bed) {
-      let value = bed[key];
-      result.push(value);
-    }
-    return result;
-  }
-
-  printBedStats({ brand: "Casper", rating: 3.9 });
-  ```

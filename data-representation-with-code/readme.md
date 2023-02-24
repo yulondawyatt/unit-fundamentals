@@ -1,14 +1,17 @@
 # Data Representation with Code
 
-Code exists to help us solve real problems. The most popular languages we use today allow us to express and solve real problems through code in a way that can at times read like plain language.
+Code exists to help us solve real problems. The most popular coding languages we use today allow us to express and solve real problems through code in a way that can, at times, read like plain language.
 
-In this lesson you'll think through how to represent real world concepts in code. You'll also see a few examples of how to do this on your own.
+In this lesson, you'll think through how to represent real-world concepts in code. You'll also see a few examples of how to do this independently.
 
 ## Learning Objectives
 
-By the end of this lesson you should be able to:
+By the end of this lesson, you should be able to:
 
 - Represent object properties in the real world as code.
+- Define a collection in terms of code.
+- Represent real-world collections of objects through data structures.
+- Define the purpose of unique identifiers when working with complex data.
 
 ---
 
@@ -18,17 +21,17 @@ Look around you -- there are likely lots of different _objects_ that you interac
 
 In the context of programming, an object is just about anything. For example, your computer is an object, as is your desk, your chair, and you. Anything that is a noun could be considered an object.
 
-Objects are not verbs. Instead verbs can be conveyed through functions. For example, if you wanted to represent the concept of "running", it would make more sense to use a function. In contrast, you could represent a "runner" as an object.
+Objects are not verbs, more typically, you can think of them as nouns. Instead, verbs can be conveyed through functions. For example, if you wanted to represent the concept of "running", it would make more sense to use a function. In contrast, you could represent a "runner" as an object.
 
 Why might you want to represent these objects in code?
 
 If you're building an app to track ratings for different hiking paths, you'll need to think about how you want to store that data. Your application will need to represent hikes, locations, and users.
 
-Deciding how to represent these real world ideas in code is critical for building all kinds of applications.
+Deciding how to represent these real-world ideas in code is critical for building all kinds of applications.
 
 ## Translating the real world
 
-Recall the different common data types in JavaScript: booleans; numbers; strings; `undefined`; `null`; and objects, including arrays. When creating a new object, these are the different data types you have to represent that particular object.
+Recall the common data types in JavaScript: booleans; numbers; strings; `undefined`; `null`; and objects, including arrays. When creating a new object, you have different data types to represent that particular object.
 
 For example, consider Mount Rainier, a mountain in Washington state. How might you represent it in code?
 
@@ -56,7 +59,11 @@ const rainier = {
 };
 ```
 
-The object above is now starting to better represent the actual mountain. There's a huge amount of data you could include, but really it's all dependent on what you want to use this data for. Additionally, there's not really a "right" way to always structure your data.
+The object above is now starting to represent the actual mountain more accurately. You could include a vast amount of data, but it depends on what you want to use it for. Additionally, there's not really a "right" way to always structure your data.
+
+### Nested objects
+
+You can put an object inside an object. Take a look at the new key `location`:
 
 ```js
 // TODO: Update with data.
@@ -75,19 +82,19 @@ const rainier = {
 
 In the example above, a few changes have taken place:
 
-1. Location information (i.e. `latitude`, `longitude`, and `state`) have all been placed in a new object under the key `location`.
-1. A new key of `activities` has been created that points to an array, in which there are two strings. These strings take the place of the `hasHiking` and `hasSkiing` keys from the previous iteration.
+1. Location information (i.e., `latitude`, `longitude`, and `state`) have all been placed in a new object under the key `location`.
+1. A new key of `activities` has been created that points to an array with two strings. These strings take the place of the `hasHiking` and `hasSkiing` keys from the previous iteration.
 
-Is the above structure better or worse than the one before? It's hard to say without know what the data will be used for. But there are some benefits to both.
+Is the above structure better or worse than the one before? It's hard to say without knowing what the data will be used for. But there are some benefits to both.
 
-- The first example has a "flatter" structure, meaning that you can access all the values by only using a single key. Sometimes that can be simpler to think about.
-- The second example is more organized, in that related data is grouped together by keys. And, it has `activities` as an array, which means you can update it easily while keeping the organization.
+- The first example has a "flatter" structure, meaning you can access all the values using only a single key. Sometimes that can be simpler to think about.
+- The second example is more organized in that related data is grouped by keys. And it has `activities` as an array, which means you can update it easily while keeping the organization.
 
 ### A few more examples
 
-How you build an object all depends on what it should be used for. Here are a few examples of objects, followed a brief description of them.
+How you build an object depends on what it should be used for. Here are a few examples of objects, followed by a brief description.
 
-#### Detailed object
+### More detailed object
 
 ```js
 const person = {
@@ -109,9 +116,15 @@ const person = {
 };
 ```
 
-The object above is very detailed and has key-value pairs broken down into different categories. It might be useful for something like an address book.
+The object above is very detailed and has key-value pairs broken down into different categories. It might be helpful for something like an address book.
 
-#### Lists
+## Collections
+
+Above, you had information about one person. If you imagine that that information was for a contacts app, you'd want many person objects.
+
+You can have an array of objects, which is often called a `collection`.
+
+Here we see a simple collection of flavors and their popularity:
 
 ```js
 const flavors = [
@@ -122,19 +135,38 @@ const flavors = [
 ];
 ```
 
-The above array contains a list of objects, representing a list of some kind. Each object inside represents a flavor of something, and its popularity. If you ever need to represent a collection of objects, you'll likely do so using an array.
+The above array contains a list of objects representing a list of some kind. Each object inside represents a flavor of something and its popularity. If you ever need to represent a collection of objects, you'll likely use an array.
 
-#### Less concrete objects
+### Tracking objects in a collection
+
+If you think about a banking app, there is a lot of data you'd keep track of for an account:
+
+- address
+- bank account total
+- phone number
+- type of bank account
+- user name
+
+This user's account's data could all change: the person could:
+
+- move
+- add money to the account
+- update their phone number
+- open multiple savings accounts
+- legally change their name
+
+So how can you make sure that you are always updating the correct object?
 
 ```js
-const transactions = [
-  { id: 1, amount: -2015.3 },
-  { id: 2, amount: -50.05 },
+const accounts = [
+  { id: 1, amount: 2015.3 },
+  { id: 2, amount: 50.05 },
   { id: 3, amount: 450.0 },
-  { id: 4, amount: -2.35 },
   { id: 5, amount: -6.05 },
-  { id: 6, amount: -2.35 },
+  { id: 6, amount: 2.35 },
 ];
 ```
 
-Each object above represents a transaction, perhaps to something like a bank account. Because the amounts aren't necessarily unique, a new key, `id`, was added to help distinguish each object. IDs can be useful when you want to represent a real world idea that needs some sort of unique descriptor.
+Each object above represents a simplified user's account. Because the amounts aren't necessarily unique, a new key, `id`, was added to help distinguish each object. IDs can be helpful when you want to represent a real-world idea that needs some unique descriptor.
+
+We would imagine that a user logs in to their account. Our user Rynn has two bank accounts, a saving's account with an `id` of 1 and a checking account with an `id` of 5. She selects the checking account so she can deposit $1000 into the correct account. The app would look up the account by the `id` number and update the amount.

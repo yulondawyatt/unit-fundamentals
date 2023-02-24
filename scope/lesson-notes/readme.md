@@ -2,9 +2,9 @@
 
 ## Learning Objectives
 
-- Define global scope.
-- Define local or function scope.
-- Define block scope.
+- Identify and differentiate between the four scopes in JavaScript.
+- Identify common problems that can arise from the misusing scope in JavaScript.
+- Leverage scope to write reusable and maintainable code.
 
 ---
 
@@ -51,9 +51,9 @@
 
 - What is a "block" in JavaScript?
 
-- `let` and `const` define block-scoped local variables. What does this mean?
+- `let`, and `const` define block-scoped local variables. What does this mean?
 
-- This code is not valid. Why not? Once you've determined why, update the code to become valid.
+- This code is not valid. Why not? Once you've determined why to update the code to become valid.
 
   ```js
   function validateLength(password) {
