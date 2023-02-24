@@ -161,9 +161,10 @@ sequence:
       <p>You should be able to copy and paste from the location bar in your browser.</p>"
       points_possible: 0
     - name: Markdown # Block N/A
-      - kind: guide
-        pursuit_path: external-tools
-        pursuit_subpath: markdown
+      elements:
+        - kind: guide
+          pursuit_path: external-tools
+          pursuit_subpath: markdown
       - kind: recording
     - name: JavaScript on Your Machine # Block 4
       pursuit_path: javascript-on-your-machine
