@@ -228,7 +228,7 @@ if (temperatureInFahrenheit < 32) {
 }
 ```
 
-The content inside of the curly braces is referred to as a code block. You can always write more code inside when you come across syntax that provides a code block. This means you're not just limited to one line of code.
+The content inside of the curly braces is often referred to as a code block. When you come across syntax that provides a code block, you can always write more code inside of it. This means you're not just limited to one line of code.
 
 ```js
 const temperatureInFahrenheit = 29;
