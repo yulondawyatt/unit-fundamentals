@@ -2,19 +2,18 @@
 
 ## Learning Objectives
 
-By the end of this lesson you should be able to:
+- Define the purpose of a function.
+- Create a function
+- Identify the common components of a function.
+- Use (invoke) a function
+- Create and use a function that accepts multiple arguments.
+- Differentiate between returning within a function and logging to the console.
 
-- Define what a function is.
-- Identify the name, parameters, and body of a given function.
-- Create functions with parameters using the function declaration syntax.
-- Call functions with arguments.
-- Return values from functions.
-
----
+<hr>
 
 ## Guiding Questions
 
-- Take a look at the following code which prints a similar sentence for two different animals.
+- Take a look at the following code, which prints a similar sentence for two animals.
 
   ```js
   console.log("Milo the hamster is up for adoption on 3/24!");
@@ -23,7 +22,7 @@ By the end of this lesson you should be able to:
 
   Consider how you might generalize each sentence above. What are the variable parts of each line of code above?
 
-- Take a look at the code below which defines variables that can be used in a more generic sentence.
+- Take a look at the code below, which defines variables that can be used in a more generic sentence.
 
   ```js
   const name1 = "Milo";
@@ -37,9 +36,9 @@ By the end of this lesson you should be able to:
   console.log(`${name2} the ${kind2} is up for adoption on ${availableDate2}!`);
   ```
 
-  This code is a bit verbose, but isn't too bad. However, consider we need to copy this pattern for 100 different animals. What problems could occur if we were to do this?
+  This code is a bit verbose but isn't too bad. However, consider we need to copy this pattern for 100 different animals. What problems could occur if we were to do this?
 
-- What is a function and how does it help solve problems of repeatability and variability?
+- What is a function, and how does it help solve problems of repeatability and variability?
 
 - Take a look at the function below. Explain each part of the function in your own words, using technical terms if possible.
 
@@ -59,7 +58,7 @@ By the end of this lesson you should be able to:
 
 - How do you call a function?
 
-- What will happen if you were to run the following code? Why? Make your best guess before running the code yourself.
+- What would happen if you were to run the following code? Why? Make your best guess before running the code yourself.
 
   ```js
   function availablePetNotice(name, kind, date) {
@@ -69,7 +68,7 @@ By the end of this lesson you should be able to:
   availablePetNotice;
   ```
 
-- What will happen if you were to run the following code? Why? Make your best guess before running the code yourself.
+- What would happen if you were to run the following code? Why? Make your best guess before running the code yourself.
 
   ```js
   function availablePetNotice(name, kind, date) {
@@ -79,7 +78,7 @@ By the end of this lesson you should be able to:
   availablePetNotice();
   ```
 
-- What will happen if you were to run the following code? Why? Make your best guess before running the code yourself.
+- What would happen if you were to run the following code? Why? Make your best guess before running the code yourself.
 
   ```js
   function availablePetNotice(name, kind, date) {
@@ -89,7 +88,7 @@ By the end of this lesson you should be able to:
   availablePetNotice("Kingsley", "dog", "3/26");
   ```
 
-- What will happen if you were to run the following code? Why? Make your best guess before running the code yourself.
+- What would happen if you were to run the following code? Why? Make your best guess before running the code yourself.
 
   ```js
   function availablePetNotice(name, kind, date) {
@@ -99,7 +98,7 @@ By the end of this lesson you should be able to:
   availablePetNotice(10, true, "??");
   ```
 
-- What will happen if you were to run the following code? Why? Make your best guess before running the code yourself.
+- What would happen if you were to run the following code? Why? Make your best guess before running the code yourself.
 
   ```js
   function availablePetNotice(name, kind, date) {
@@ -112,7 +111,7 @@ By the end of this lesson you should be able to:
   availablePetNotice(animalName, animalKind, adoptionDate);
   ```
 
-- What will happen if you were to run the following code? Why? Make your best guess before running the code yourself.
+- What would happen if you were to run the following code? Why? Make your best guess before running the code yourself.
 
   ```js
   function availablePetNotice(name, kind, date) {
@@ -125,7 +124,7 @@ By the end of this lesson you should be able to:
   availablePetNotice(name, kind, date);
   ```
 
-- What will happen if you were to run the following code? Why? Make your best guess before running the code yourself.
+- What would happen if you were to run the following code? Why? Make your best guess before running the code yourself.
 
   ```js
   function availablePetNotice(x, y, z) {
@@ -138,7 +137,7 @@ By the end of this lesson you should be able to:
   availablePetNotice(name, kind, date);
   ```
 
-- What will happen if you were to run the following code? Why? Make your best guess before running the code yourself.
+- What would happen if you were to run the following code? Why? Make your best guess before running the code yourself.
 
   ```js
   function availablePetNotice(name, kind, date) {
@@ -152,7 +151,7 @@ By the end of this lesson you should be able to:
   availablePetNotice(name, kind, date, cost);
   ```
 
-- What will happen if you were to run the following code? Why? Make your best guess before running the code yourself.
+- What would happen if you were to run the following code? Why? Make your best guess before running the code yourself.
 
   ```js
   function availablePetNotice(name, kind, date) {
@@ -168,7 +167,7 @@ By the end of this lesson you should be able to:
 
 - In the example above, the value of `result` was `undefined`. This means that the expression `availablePetNotice(name, kind, date)` evaluates to `undefined`.
 
-  This doesn't have to be the case. Instead, you can return values from within your function with the `return` keyword. When the function is called and used in some way, such as assigning to a variable, it is replaced by the returned value. To see an example of this, look below.
+  This doesn't have to be the case. Instead, you can return values within your function with the `return` keyword. When the function is called and used in some way, such as assigning to a variable, it is replaced by the returned value. To see an example of this, look below.
 
   ```js
   function availablePetNotice(name, kind, date) {
@@ -182,7 +181,7 @@ By the end of this lesson you should be able to:
   console.log(result); //> "Kingsley the dog is up for adoption on 3/26!"
   ```
 
-  In your own words, describe how the above code is different than using `console.log()`. What are the implications of these differences?
+  In your own words, describe how the above code differs from using `console.log()`. What are the implications of these differences?
 
 - When the function below is called, will anything be printed to the console? What is the return value of the function?
 

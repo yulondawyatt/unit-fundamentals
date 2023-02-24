@@ -1,97 +1,204 @@
-[![Pursuit Logo](https://avatars1.githubusercontent.com/u/5825944?s=200&v=4)](https://pursuit.org)
+# Scope
 
-# Functions & Scope
+Thus far, the amount of coding we've done in class or lab has only amounted to reasonably short amounts of code. When working as a developer, you'll work on a project for months or years, and you'll also be coding with other developers. The programs professionals work on can be thousands or even millions of lines of code.
 
-Functions are a fundamental part of any programming language. This lesson will cover function syntax, usage, and some mechanics.
+Therefore, we must learn how to write maintainable code and follow scalable code patterns.
 
-## Goals
+## Learning Objectives
 
-- Have an understanding of scope and variables inside and outside of functions
+- Identify and differentiate between the four scopes in JavaScript.
+- Identify common problems that can arise from the misusing scope in JavaScript.
+- Leverage scope to write reusable and maintainable code.
 
-## Vocabulary
+<hr>
 
-- Global variable scope
-- Parameters & Arguments
-- Local variable scope (function scope)
+## Introduction to scope
 
-## Scope
+In coding, scope refers to a section of code. Within this section, all the functions and code blocks will be able to "look up" the other function definitions and variables.
 
-To understand scope, we have to start thinking about _where variables are accessible_ and where they're not.
+There are four kinds of scope:
 
-So far we've only dealt with what's called `global scope`, where every variable is accessible from everywhere. Now that we're working with functions, we can start to think of scope as a sort of hierarchy.
+- Global
+- Block
+- Function
+- Module
+
+## Global scope
+
+The highest level of scope is called `global`. Any section of code can look up and find this definition. An example is `console.log` - a global function you can call anywhere at any time.
+
+This may seem like the best option for all of your code is to access everything you've created, and it may seem very easy to keep track of because, so far, your programs and functions have been relatively small. However, for bigger projects the amount of global functions and variables should be very limited and well thought out. This is because if a program has thousands of variables you don't want to override ones already created and you don't want to track all the variables that have been created. It makes more sense to limit where the variables can be defined and used.
+
+## Block scope
+
+This is any scope contained inside a set of curly braces `{}`.
 
 ```js
-let parting = "gooodbye";
-
-function hello() {
-  let greeting = "hello";
-  console.log(greeting); // => "hello"
-  console.log(parting); // => "goodbye"
+if (true) {
+  // myVariable can be accessed anywhere inside the curly braces
+  let myVariable = "yes";
+  console.log(myVariable);
 }
-
-console.log(greeting); // ReferenceError: greeting is not defined
-console.log(parting); // => "goodbye"
 ```
 
-The key takeaway here is that variables declared in a function are only accessible inside that function. Variables declared outside a function are called `global` and they can be accessed and modified from any function.
-
-A variable declared inside a function has _local scope_, and a variable not declared inside a function has _global scope_. So a variable with local scope is only available inside that function. A variable with global scope is available inside or outside the function.
-
-If we create a variable inside a function with the same name as a global variable - the function will only be aware of the local one. This, however, will not change the value of the global variable.
+But outside the curly braces, it is not defined. The following will throw an error message because it is outside of the code block:
 
 ```js
-let greeting = "hello";
-
-function hello() {
-  let greeting = "what's up?";
-  console.log(greeting); // => "what's up?"
+if (true) {
+  // myVariable can be accessed anywhere inside the curly braces
+  let myVariable = "yes";
+  console.log(myVariable);
 }
 
-console.log(greeting); // => "hello"
+console.log(myVariable);
+
+// Uncaught ReferenceError: myVariable is not defined
 ```
 
-If we have a function inside of a function, the rules still apply, but now we have more than just two scopes.
+## Function scope
 
 ```js
-let global = "hello global";
+function myFunc(myName) {
+  console.log(`My name is ${myName}`);
+}
 
-function firstLevel() {
-  let first = "hello first";
-  console.log(first); // => "hello first"
-  console.log(global); // => "hello global"
+myFunc("JJ");
 
-  function secondLevel() {
-    let second = "hello second";
-    console.log(first); // => "hello first"
-    console.log(second); // => "hello second"
-    console.log(global); // => "hello global"
+// myName is only available inside the function
+
+console.log(myName);
+
+// Uncaught ReferenceError: myName is not defined
+```
+
+## Module scope
+
+JavaScript can be split up into modules. You can create multiple files with JavaScript and then use them together. Typically there is one module per file. To create files as modules, we would have to do some more set-up, which we will cover in a later lesson. For now, we can confirm that code in separate files is not in the same scope.
+
+**index.js**
+
+```js
+const myConstant = 5;
+```
+
+You can create a separate file, but the code written here will not know about the code in `index.js`.
+
+**myFile.js**
+
+```js
+console.log(myConstant);
+
+// Uncaught ReferenceError: myConstant is not defined
+```
+
+## Looking up scope
+
+Let's look at a bit of code:
+
+```js
+const someNumber = 10;
+
+if (someNumber === 10) {
+  console.log(`The number is equal to ten! The value is ${someNumber}`);
+}
+```
+
+Outside the code blocks for the `if` statement, the value of `someNumber` is defined.
+
+A JavaScript file starts from the top and loads the values in order. At the top of this file, `someNumber` was defined. JavaScript first checks for a definition inside the `if` code block when `someNumber` is referenced. JavaScript notes that it is not defined inside the block, therefore the next step is to looks up to next code block level, which is the file level in this case. If it can't find it a definition, it will throw an error. In this case, it is found so it can determine the value.
+
+If you change the order, you will get an error because `someNumber` only gets defined after the `if` code block has been executed.
+
+```js
+if (someNumber === 10) {
+  console.log(`The number is equal to ten! The value is ${someNumber}`);
+}
+
+const someNumber = 10;
+```
+
+Additionally, if you declare the same variable inside a code block, you can end up with the same variable name existing in two different places with two different values.
+
+```js
+const someNumber = 10;
+
+if (someNumber === 10) {
+  const someNumber = 555;
+  console.log(
+    `The outside number is equal to ten! The value of someNumber inside the code block is ${someNumber}`
+  );
+}
+console.log(`The value of someNumber outside the of block is ${someNumber}`);
+```
+
+## Organizing code
+
+Sometimes it is useful to have a value be global (within a file). For example, if you are going to be working with conversions, some constant values are useful to have in one place and not have to define them over and over again:
+
+```js
+const poundsToKg = 0.45;
+const kgToPounds = 2.2;
+
+function convertPoundsToKg(weight) {
+  console.log(`Your item weighs ${poundsToKg * weight}kg`);
+  if (poundsToKg * weight < 10) {
+    console.log(`Your item weighs under 10kg. Congrats! We can ship it!`);
+  } else {
+    console.log(`Your item weighs over 10kg. Sorry! We can't ship it!`);
   }
-
-  console.log(second); // => ReferenceError: second is not defined
 }
 
-console.log(global); // => "hello global"
-console.log(first); // => ReferenceError: first is not defined
-console.log(second); // => ReferenceError: second is not defined
+convertPoundsToKg(2);
+convertPoundsToKg(25);
 ```
 
-## Scope and parameters
+There are other times when you may not want a variable to be global, but you would wish multiple code blocks to access the value.
 
-When a function has parameters, it's helpful to think about them like temporary variables that only exist inside the function.
-
-Let's say we have a function with two parameters. When we **call** the function, we have to provide that function with two values. Then we can access those values inside the function.
+The following code will throw an error. Can you identify what is wrong and fix it?
 
 ```js
-// declare the function with two parameters
-function iHaveParams(num, str) {
-  console.log(num, str);
+const poundsToKg = 0.45;
+const kgToPounds = 2.2;
+
+function convertPoundsToKg(weight) {
+  console.log(`Your item weighs ${poundsToKg * weight}kg`);
+  if (poundsToKg * weight < 10) {
+    let shipping = true;
+  } else {
+    let shipping = false;
+  }
+  if (shipping) {
+    console.log(`Your item weighs under 10kg. Congrats! We can ship it!`);
+  }
 }
 
-// call the function, pass in some values
-iHaveParams(22, "why"); // => 22, why
-
-// num and str are not accessible outside the function
-console.log(num, str); // ReferenceError
+convertPoundsToKg(2);
+convertPoundsToKg(25);
 ```
 
-This is very valuable! We often use functions to contain our scope, so we don't accidentally affect variables outside of it.
+The variable `shipping` only exists inside the `if/else` blocks. If you want to reuse it, you must declare that variable in the next highest scope so that the following blocks that need access can use the value.
+
+```js
+const poundsToKg = 0.45;
+const kgToPounds = 2.2;
+
+function convertPoundsToKg(weight) {
+  let shipping;
+  console.log(`Your item weighs ${poundsToKg * weight}kg`);
+  if (poundsToKg * weight > 10) {
+    shipping = false;
+  } else {
+    shipping = true;
+  }
+  if (shipping) {
+    console.log(`Your item weighs under 10kg. Congrats! We can ship it!`);
+  }
+}
+
+convertPoundsToKg(2);
+convertPoundsToKg(25);
+```
+
+What would happen if you had defined `shipping` outside of the function. Would this have been a better choice? Why or why not?
+
+Scope is fairly challenging to master. It takes a lot of trial and error and practice. Over time you'll gain a better understanding.

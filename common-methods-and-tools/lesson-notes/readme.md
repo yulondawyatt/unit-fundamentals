@@ -2,59 +2,55 @@
 
 ## Learning Objectives
 
-- Manipulate strings with common methods and tools.
-- Manipulate numbers with common methods and tools.
-- Manipulate arrays with common methods and tools.
+- Be able to describe why JavaScript has built-in methods and tools.
+- Be able to name a few names and functionality common built-in methods for numbers, strings and arrays.
+- Be able to use resources like MDN or W3 schools to look up methods and implement them in order to solve coding problems.
 
----
+<hr>
 
-## Guiding Questions
+## Class activity
 
-- What is a method?
+By the end of this program, you'll have built the skills to learn to code whatever you need on your own. You'll be able to teach yourself a new coding language, a new framework, and other tools.
 
-- Documentation can sometimes be difficult to read, but is essential to your success as a developer. Take a look at the following page from the Mozilla Developer Network that describes the `.push()` method. Then, describe in your own words what the `.push()` method does.
+To gain such a skill, you must begin practicing teaching yourself smaller things first and then work your way up.
 
-  - [MDN: .push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+In this class activity, your instructor will assign you into small groups and give you 15-25 minutes to research your JavaScript method. In that time you will write a short summary and create a demonstration and present it to your classmates. Your demonstration should be 2-5 minutes long and you should be prepared to share your written summary and demo with your classmates.
 
-- In your repl, come up with a code example that demonstrates how `.push()` works. Think of an example that would help you describe `.push()` to another classmate.
+While this activity lists a number of common methods there are still more out there. Your goal is to learn how to research and utilize the tools, not memorize them all.
 
-- Using bracket notation, you can perform the same effect as `.push()`. What is the benefit to using `.push()`, if any? What are the differences between the two options?
+> **Note**: be on the lookout for methods that don't change the original data compared to the ones that change it.
 
-### Group activity
+For example, if you reverse an array, does the original array stay the same or does it change?
 
-In groups, you will be assigned one or more methods or tools. With your group, look at the documentation and come up with a few code samples.
+```js
+const numsArray = [1, 2, 3, 4, 5];
 
-Once your group has had time to do its research, you will be split into different groups where you will present what you learned to your classmates. Be prepared to answer questions to best of your ability about what you've learned.
+console.log(numsArray.reverse());
+console.log(numsArray);
+```
 
-If there are any lingering questions, write them down so that you can ask your instructor.
+Also notice that a method like `.pop()` not only changes the original array, but also returns the item that was removed.
 
-#### Groups
+```js
+const poppedNumber = numsArray.pop();
+console.log(poppedNumber);
+console.log(numsArray);
+```
 
-| #   | Topics                                                                                            |
-| --- | ------------------------------------------------------------------------------------------------- |
-| 1   | [.toLowerCase()][lowercase], [.toUpperCase()][uppercase], [.trim()][trim]                         |
-| 2   | [Number()][number], [.toFixed()][fixed], [Increment (++)][increment], [Decrement (--)][decrement] |
-| 3   | [.pop()][pop], [.shift()][shift], [.unshift()][unshift]                                           |
-| 4   | [String .includes()][string-includes], [.replace()][replace] (ignore RegExp)                      |
-| 5   | [Bracket notation with strings and .charAt()][character-at], [.join()][join]                      |
-| 6   | [.concat()][concat], [.split()][split]                                                            |
-| 7   | [Array .includes()][array-includes], [Array .indexOf()][array-index-of]                           |
+These small details end up playing a critical role in how you design your logic in your functions.
 
-[lowercase]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
-[uppercase]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
-[trim]: http://mozilla.orghttps://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim
-[number]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number#function_syntax
-[fixed]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/toFixed
-[pop]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop
-[shift]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/shift
-[unshift]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift
-[string-includes]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/includes
-[replace]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace
-[character-at]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String#character_access
-[join]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join
-[concat]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
-[split]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/split
-[increment]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Increment
-[decrement]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Decrement
-[array-includes]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
-[array-index-of]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf
+| Group Number/Category |           Method(s)            |
+| :-------------------: | :----------------------------: |
+|  **Number methods**   |
+|           1           |          `.toFixed()`          |
+|           2           | `Math.ceil()` & `Math.floor()` |
+|           3           |          `.toFixed()`          |
+|           4           |  `Math.min()` & `Math.max()`   |
+|  **String methods**   |
+|           5           |        `.toLowerCase()`        |
+|           6           |           `.slice()`           |
+|           7           |         `.substring()`         |
+|   **Array methods**   |
+|           8           |         `.includes()`          |
+|           9           |          `.indexOf()`          |
+|          10           |          `.concat()`           |

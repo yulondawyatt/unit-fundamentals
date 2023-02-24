@@ -4,12 +4,14 @@
 
 By the end of this lesson you should be able to:
 
-- Define what a collection is in the context of software development.
 - Define what an array is and describe its properties.
 - Create arrays with the array literal syntax.
 - Access elements in an array through bracket notation.
-- Add elements to an array with bracket notation.
-- Update values in an array with bracket notation.
+- Add elements to an array with the bracket notation.
+- Update values in an array with the bracket notation.
+- Use methods to add and remove elements to the back and front of an array.
+- Iterate over an array
+- Combine functions, conditionals, loops and arrays.
 
 ---
 
@@ -99,6 +101,14 @@ By the end of this lesson you should be able to:
 
 - Using bracket notation, is there any way to remove an item from an array? If so, how? If not, how can you achieve a similar effect?
 
+- Can you change the array.length property? What would you expect to happen?
+
+```js
+languages.length = 2;
+```
+
 - Take a moment to reflect on the the different ways of using bracket notation to modify arrays. In what ways are they similar and in what ways are they different?
 
   For example, how is updating an array similar to adding a new element?
+
+- How can you loop over the array so that you can console log each item individually?

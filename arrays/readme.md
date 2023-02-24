@@ -1,58 +1,235 @@
-# Arrays Lesson
+# Arrays
 
-JavaScript arrays are used to store multiple values in a single variable.
+## Introduction
+
+Imagine you have a grocery list and want to write a program so you can see your grocery list, then add, delete, and modify items on the list. How could you do it with code? Would you use a string? A number? A boolean? None of these data types make sense for a grocery list. We need new datatype called an array that will allow us to store many items in one place.
 
 ## Learning Objectives
 
-- Understand how to create an array, and why you'd want to.
-- Know basic array property `length`.
+- Define what an array is and describe its properties.
+- Create arrays with the array literal syntax.
+- Access elements in an array through bracket notation.
+- Add elements to an array with the bracket notation.
+- Update values in an array with the bracket notation.
+- Use methods to add and remove elements to the back and front of an array.
+- Iterate over an array
+- Combine functions, conditionals, loops and arrays.
 
----
+<hr>
 
-# Array Introduction
+## Introduction to Arrays
 
-An array provides a convenient way to store a collection of **things / data**. Say we want to keep the numbers `2`, `3`, `5`, `7`, and `11` - all in one place.
-Instead of creating five separate variables we can create an array to store all these values.
-To create an array, we use the `[` and `]` square brackets, and in between put whatever values we need separated by commas.
-
-We can also call new on the Array class and pass in the elements desired, but this is less common and not the preferred way. Use the brackets when you can.
-
-```js
-let arr = [2, 3, 5, 7, 11];
-
-// OR
-
-let arr = new Array(2, 3, 5, 7, 11);
-```
-
-Arrays (like strings) like strings can be accessed with indexes and have a `length` property.
-
-Each element in an array has its own index number which represents the elements location in the array - these start at 0 and increase by 1 for every subsequent element. We can access each single element in an array by using square brackets in which we write that elements's index number.
-
-![array](./assets/array_elements.jpg)
-
-We can put any type of variables or data as elements of an array. We can even mix different types in a single array or put an array itself as one
-of the elements.
+An array is a data structure, and you can assign it to a variable like a number or string. Let's begin by creating an empty array:
 
 ```js
-let animals = ["cat", "dog", "raccoon"];
-let mixedArray = [2, 5, "zebra", ["Can", "you", "believe", "it"]];
+const myArray = [];
+
+console.log(myArray);
 ```
 
-However it is **BEST** practice to use the same data type across all elements in the array.
-
-We access the first element of the array by using index `0`, and the last by using index `array.length - 1`
+Arrays have a property called `length`. You can access this property at any time by adding `.length` to the end of the array.
 
 ```js
-let animals = ["cat", "dog", "raccoon", "giraffe"];
-
-// this will print 'cat'
-console.log(animals[0]);
-
-// this will print 'giraffe'
-console.log(animals[animals.length - 1]);
+console.log(myArray.length);
 ```
 
-### Resources
+Arrays contain elements that are separated by commas `,`. The elements can be any datatype: strings, numbers, booleans, or even another array! Though typically, elements in an array are all the same datatype.
 
-- [w3schools - Arrays](https://www.w3schools.com/jsref/jsref_obj_array.asp)
+```js
+const squares = [1, 4, 9, 16, 25];
+```
+
+Let's imagine an adventurer named Rynn. Rynn has a magic backpack that can hold everything she needs for her adventures.
+
+```js
+const backpack = [
+  "boomerang",
+  "map",
+  "candle",
+  "tent",
+  "Tums",
+  "hair clip",
+  "coin pouch",
+];
+
+console.log(backpack);
+```
+
+## Accessing elements in an array
+
+Above, we created an array and could console log the whole thing. How can we access one item? Each item in the array has a numbered `index` position. The first element in an array has an index of `0`.
+
+To access an element in an array, you put the index position inside square brackets `[]`.
+
+```js
+console.log(backpack[0]);
+// "boomerang"
+console.log(backpack[2]);
+// "candle"
+```
+
+What happens if you try to access something in an index position that doesn't exist?
+
+```js
+console.log(backpack[333]);
+```
+
+You can use expressions between the square brackets to access array elements:
+
+```js
+console.log(backpack[3 * 1 - 2]);
+// "map"
+```
+
+And you can use variables:
+
+```js
+const index = 4;
+
+console.log(backpack[4]);
+// "Tums"
+```
+
+How can you get the last item in an array? Arrays can be any length, and the length can change over the duration of your program.
+
+```js
+const lastItem = backpack.length - 1;
+
+console.log(backpack[lastItem]);
+```
+
+Why is the last value at `.length - 1` and not just `.length`?
+
+## Changing elements
+
+You can change an element in the array by accessing the index position and reassigning it:
+
+```js
+backpack[2] = "solar powered super lantern";
+
+console.log(backpack);
+```
+
+You can also add an element to the end of an array.
+
+```js
+backpack[backpack.length] = "fierce kitten";
+
+console.log(backpack);
+```
+
+## Iterating over an array
+
+Use a `for` loop to iterate over all the items in an array.
+
+```js
+for (let i = 0; i < backpack.length; i++) {
+  console.log(
+    `I take out my ${backpack[i]}. I clean it and carefully put it back.`
+  );
+}
+
+// I take out my bedazzled boomerang. I clean it and carefully put it back.
+// I take out my map. I clean it and carefully put it back.
+// I take out my solar-powered super lantern. I clean it and carefully put it back.
+// I take out my tent. I clean it and carefully put it back.
+// I take out my Tums. I clean it and carefully put it back.
+// I take out my hair clip. I clean it and carefully put it back.
+// I take out my kitten food. I clean it and carefully put it back.
+// I take out my coin pouch. I clean it and carefully put it back.
+// I take out my clowder of fierce kittens. I clean it and carefully put it back.
+```
+
+You can also iterate with a different number of steps:
+
+```js
+for (let i = 1; i < backpack.length; i += 2) {
+  console.log(`A rouge is trying to steal my ${backpack[i]}!!!`);
+}
+// A rogue is trying to steal my map!!!
+// A rogue is trying to steal my tent!!!
+// A rogue is trying to steal my hair clip!!!
+// A rogue is trying to steal my coin pouch!!!
+```
+
+You can combine loops, arrays, and conditionals.
+
+```js
+for (let i = 0; i < backpack.length; i++) {
+  if (i % 3 === 0) {
+    console.log("A lovely sprite has enchanted my " + backpack[i] + ".");
+  }
+}
+
+// A lovely sprite has enchanted my bedazzled boomerang.
+// A lovely sprite has enchanted my tent.
+// A lovely sprite has enchanted my kitten food.
+```
+
+You can include more complex conditionals.
+
+```js
+for (let i = 0; i < backpack.length; i++) {
+  if (i === 5 || (i % 2 === 0 && i !== 8)) {
+    console.log("A sneaky elf has set fire to my " + backpack[i] + "!");
+  }
+}
+
+// A sneaky elf has set fire to my Tums!
+// A sneaky elf has set fire to my hair clip!
+// A sneaky elf has set fire to my kitten food!
+```
+
+## Putting it all together
+
+Finally, you can combine everything with a function.
+
+```js
+function checkContents(array, favNumber = 0) {
+  console.log(`I have ${array.length} items in my backpack`);
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === "map") {
+      console.log("I love my map");
+    } else if (array[i] === "tent") {
+      console.log("I love sleeping in my tent");
+    } else {
+      console.log(`I have accounted for my ${array[i]}`);
+    }
+
+    if (i == favNumber) {
+      console.log(`${array[i]} is my favorite item.`);
+    }
+  }
+}
+
+checkContents(backpack);
+```
+
+## An array's type
+
+If you use `typeof` on an array you will get...
+
+```js
+const shortNumberArray = [1, 2, 3];
+console.log(typeof shortNumberArray);
+// object
+```
+
+An object! We will cover objects in a later lesson and explore why an array has a type of object.
+
+## JSDoc array notation
+
+An array can be made up of numbers, strings, booleans and more. When commenting with JS Docs, you would write the type of element in the array and then follow it with square brackets.
+
+```js
+/**
+ * Examples of how to note arrays with different data types
+ * @param {string[]} employees - The employee's names, which are strings
+ * @param {number[]} employeesAges - The employee's ages, which are numbers
+ * @param {boolean[]} employeesCurrentlyOnVacation - The employee's status (boolean), whether they are currently on vacation
+ * @param {(string|string[])} loanedEquipment - this value could either be a string or an array of strings.
+ * @param {(string[])} [otherNames = "none" ]- this value has a default value of none.
+ */
+```
+
+[JS Doc params examples](https://jsdoc.app/tags-param.html)

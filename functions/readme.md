@@ -1,184 +1,208 @@
 # Functions
 
-Functions are a fundamental part of any programming language. This lesson will cover function syntax, usage, and some mechanics.
+## Introduction
 
-## Goals
+Functions are another fundamental element of coding. Functions are blocks of code that can be saved and run repeatedly. When building programs, coders stick to common principles like DRY (Don't Repeat Yourself), which help coders build large and maintainable projects.
 
-- Know how to declare a function
+Since the first lesson, you've used a function called `console.log()`. This function prints (logs) things to your console. You didn't have to write the code to make this functionality. You just had to know how to use it. You can also use this function as often as you like, wherever you want. This utility makes functions powerful tools.
 
-## Vocabulary
+## Learning Objectives
 
-- Function Definition
-- Function Call
-- _Function Declaration_ syntax
-- Parameters & Arguments
+- Define the purpose of a function.
+- Create a function
+- Identify the standard components of a function.
+- Use (invoke) a function
+- Create and use a function that accepts multiple arguments.
+- Differentiate between returning within a function and logging to the console.
 
-## Why Functions?
+<hr>
 
-We use functions to contain code that we want to re-use, or to contain code that we want to call at a later time.
+## Create a function
 
-Let's say we have two different numbers:
-
-```js
-let smallNum = 6;
-let bigNum = 15389;
-```
-
-Now let's say we want to do some math on these numbers. We could do it the manual way:
+Now, it's your turn to declare a function. First, you start with the keyword `function` and then name the function, just like you would a variable. After that, you must have a set of parentheses, then a set of curly braces. Inside the curly braces will be the code you want to run, also known as the `function body`.
 
 ```js
-let smallResult = (smallNum * 4 + 23 / 8 - 4) % 2;
-let bigResult = (bigNum * 4 + 23 / 8 - 4) % 2;
-```
-
-Now that's not so bad, but what if we had ten numbers? or a hundred? Typing that out would be a huge pain, and we have way better options than to force ourselves to do something this repetitive.
-
-We can instead write a single function to do this for us.
-
-## Function syntax
-
-Functions allow us to reuse code so that we don't have to repeat ourselves:
-
-```js
-let smallNum = 6;
-let bigNum = 15389;
-
-function doMath(num) {
-  console.log((num * 4 + 23 / 8 - 4) % 2);
+function helloWorld() {
+  // Add whatever code you want to run here
+  console.log("Hello, world!");
 }
 ```
 
-We've taken the code that does some several step math process and put it inside a function so that we can reuse it.
-
-Specifically, this function takes in an input (called an argument, in this case the `type` is a `number`) and console logs a new number after performing all those operations.
-
-So we have a way to declare a function, which creates it. But if we want to execute (or **call**) that function, we do this:
+To call this function, also called `invoking a function`, you would write:
 
 ```js
-doMath(smallNum); // => 0.875
-doMath(bigNum); // => 0.875
+helloWorld();
 ```
 
-Here we're calling the function twice and passing in a different value each time. The function prints out the result of the math equation.
-
-Let's break down this new syntax with another example:
-
-![functions](./assets/function_composition.png)
-
-- The above syntax is called **function declaration**.
-  The word `function` tells JS that we are **declaring** a function. Just like `const` lets JS know we are about to declare a variable.
-
-- squareNumber is the **name** of the function. Not all functions need a name. Some functions are anonymous and don't have a name. But for now, we will be dealing with functions that do have a name. Ideally the name describes what the function does.
-
-- Inside the parentheses are **parameters** which are used to define a function. When we call a function we replace parameters with **arguments**. Arguments are the real values that are passed into a function. Often the words parameters, and arguments are used interchangeably.
-
-- The opening curly brace, `{` indicates the start of the function. The closing curly brace, `}` indicates the end of the function.
-
-- Between the braces, is the code that makes up the function. This is called the `function body`. **return** is the result (what we get back) after we've called the function. If there is no **return** statement, the function will return `undefined`. Once something is **returned** from a function, the function has ended. This means, that even if there is code after the return statement, it will not be executed.
-
-## Functions as Mini-Programs
-
-A function is like a mini-program inside our main program. Whenever the code inside it is done running, we return to the line from which we called the function. A variable defined inside a function will be forgotten when the function is done running. Every time we call the function `logPets` below, the variables will be created anew.
+Including the `()` to call the function is critical. If you forget to include the parentheses, you will only reference the function but not call it to action.
 
 ```js
-// This function will print 'cat' and then print 'dog'
-function logPets() {
-  let pet = "cat";
-  console.log(pet);
-  pet = "dog";
-  console.log(pet);
+// Does not throw an error
+// Does not console.log the message either
+helloWorld;
+```
+
+## Create a function with parameters
+
+When you create a function and put something inside the parentheses, this value is called a `parameter`.
+
+```js
+function helloPerson(name) {
+  console.log(`Hello, ${name}!`);
 }
+```
 
-console.log("start here"); // => "start here"
+When you invoke the function, you must pass an `argument` inside the parentheses for the function to use the value:
 
-// logPets will do the same thing every time we call it
-logPets();
-// => 'cat'
-// => 'dog'
-logPets();
-// => 'cat'
-// => 'dog'
+```js
+helloPerson("Cameron");
+// "Hello, Cameron!"
+```
 
-console.log("okay we're done"); // => "okay we're done"
+> **Note**: When you define a function the variables inside the parenthesis are called parameters. When you call a function and pass values, the values inside the parenthesis are called arguments.
+
+You can add more parameters:
+
+```js
+function helloPersonAgain(firstName, lastName) {
+  console.log(`Hello, ${firstName} ${lastName}!`);
+}
+```
+
+```js
+helloPersonAgain("Gordon", "Clarke");
+```
+
+And you can reuse functions over and over again:
+
+```js
+helloPersonAgain("Joe", "MacMillian");
+helloPersonAgain("Donna", "Clark");
+helloPersonAgain("Joe", "MacMillian");
+helloPersonAgain("John", "Bosworth");
+```
+
+Parameters allow your functions to be more flexible and customizable.
+
+## Return Values
+
+Functions have another ability, and that is to return a value.
+
+```js
+function square(x) {
+  return x * x;
+}
+```
+
+That means you can assign the value that the function creates to a variable.
+
+```js
+const squareFour = square(4);
+console.log(squareFour);
+```
+
+You can also put a function inside another function, and it will evaluate from the inside out:
+
+```js
+console.log(square(5));
+```
+
+> **Note**: the function `console.log` returns nothing. Therefore its return value is `undefined`. All functions that don't have a return value will have a default return value of `undefined`.
+
+```js
+// This will console log
+// If you are using repl.it a following value of `undefined` may show up
+console.log(helloPerson("Lev"));
+
+// If you try to assign a function's result to a variable, you will get undefined
+const yoYo = helloPerson("Yo-Yo");
+console.log(yoYo);
+// undefined because the function `helloPerson` does not return a value
 ```
 
 ## Default parameters
 
-In ES6 we can declare functions with parameters that have a default value. This way we can call the function and provide our own value as usual, or call the function without passing in a value, in which case the default applies.
-
-Example:
+It can be helpful to have a default parameter value if no argument is supplied.
 
 ```js
-function square(n = 5) {
-  return n * n;
+function greeting(salutation = "Hello") {
+  console.log(`${salutation}, world!`);
 }
-
-console.log(square(3)); // => 9
-console.log(square(10)); // => 100
-console.log(square()); // => 25
 ```
 
-## Return statements
-
-Return statements are crucial to understanding how functions work. When you call a function that has a return statement in it, it _produces_ a new value that you can then use later.
-
-A parameter can be considered an input, returns are considered outputs.
-
-Let's review this with another function:
+Now, you can call `greeting()`, and it will still say `Hello, world!` or you can add your greeting.
 
 ```js
-function sayHello() {
-  return "Hello";
-}
-
-let greet = sayHello();
-
-console.log(greet); // => "Hello"
+greeting();
+// "Hello, world!"
+greeting("Howdy");
+// "Howdy, world!"
 ```
 
-This is an oversimplified example - there's no input and we could just skip the function and let `greet` equal `"Hello"`. So lets make it a little more complex.
+## Other ways to write functions
+
+JavaScript was initially written in 10 days. It has been in use since 1999. As JavaScript grew in popularity, more and more features were added. As more and more people use it, there are also more and more opinions and styles. In this class, we will primarily use the above function definition syntax, but you may encounter two other syntaxes as you continue to research and learn.
+
+### Function expression
+
+A function expression uses a variable and assigns the variable a function:
 
 ```js
-let greet = "hello";
+const myFunc = function () {
+  console.log("This is my new function.");
+};
 
-function addName(name) {
-  return greet + " " + name;
-}
-
-let namedGreet = addName("jimmy");
-
-console.log(greet); // => "hello"
-console.log(namedGreet); // => "hello jimmy"
+myFunc();
 ```
 
-Here, we've got an input (`"jimmy"`) and an output (`"hello jimmy"`).
+### Arrow function
 
-The takeaway from this is that returns _produce_ a new value from the function. To use that value, we have to capture it in a variable, otherwise it disappears.
-
-If we don't return anything from a function, the function automatically returns `undefined`.
-
-### Logging is not returning
+An arrow function skips the keyword `function` in favor of an arrow `=>`.
 
 ```js
-function logSum(num1, num2) {
-  console.log(num1 + num2);
-}
+const myArrowFunc = () => {
+  console.log("This is my new arrow function.");
+};
 
-function sum(num1, num2) {
+myArrowFunc();
+```
+
+## Functions can call other functions
+
+You can build functions to call other functions.
+
+```js
+function add(num1, num2) {
   return num1 + num2;
 }
+function subtract(num1, num2) {
+  return num1 - num2;
+}
+function multiply(num1, num2) {
+  return num1 * num2;
+}
+function divide(num1, num2) {
+  return num1 / num2;
+}
+function calculator(num1, num2, operator) {
+  if (operator === "add") {
+    return add(num1, num2);
+  } else if (operator === "subtract") {
+    return subtract(num1, num2);
+  } else if (operator === "multiply") {
+    return add(num1, num2);
+  } else if (operator === "divide") {
+    return divide(num1, num2);
+  } else {
+    return `Something went wrong`;
+  }
+}
+console.log(calculator(1, 1, "add"));
+console.log(calculator(2, 1, "subtract"));
+console.log(calculator(3, 4, "multiply"));
+console.log(calculator(5, 2, "divide"));
 ```
 
-Though these two functions look similar, they are very different. Here's how:
+## Hello, world! History
 
-```js
-console.log("Twice the sum of 4 and 6 is " + logSum(4, 6) * 2); // => NaN
-console.log("Twice the sum of 4 and 6 is " + sum(4, 6) * 2); // => 20
-```
-
-This is because logSum(4,6) **returns** undefined, even though it happens to print out the sum. Just because the value appears in the console doesn't mean it's been returned by the function, they do different things.
-
-## Resources
-
-- [mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
-- [Eloquent Javascript - Functions](http://eloquentjavascript.net/03_functions.html)
+If you would like, you can learn about the history of the [Hello, World! program](https://en.wikipedia.org/wiki/%22Hello,_World!%22_program).
