@@ -162,7 +162,7 @@ const accounts = [
   { id: 1, amount: 2015.3 },
   { id: 2, amount: 50.05 },
   { id: 3, amount: 450.0 },
-  { id: 5, amount: -6.05 },
+  { id: 5, amount: -1.05 },
   { id: 6, amount: 2.35 },
 ];
 ```
@@ -185,9 +185,9 @@ const oneAccount = {
     state: "NY",
     zip: 11101,
   },
-  amount: -6.05,
-  pastTransactions: [-100, -30, -3, -55, -63, -150, 1000],
+  amount: -1.05,
+  pastTransactions: [-100, -30, -20, -600, -3, -55, -63, -150, 1000],
 };
 ```
 
-We would imagine that a user logs in to their account. Our user Rynn, has two bank accounts, a saving's account with an `id` of 1 and a checking account with an `id` of 5. Rynn selects the checking account so they can deposit $1000 into the correct account. The app would look up the account by the `id` number and update the amount. Rynn could also change multiple details and the account could still be found, because the id never changes.
+Imagine that a user logs in to their account. The user Rynn, has two bank accounts, a saving's account with an `id` of 1 and a checking account with an `id` of 5. Rynn selects the checking account so they can deposit $1000 into the correct account. The app would look up the account by the `id` number and update the amount. Rynn could also change multiple details and the account could still be found, because the id never changes.
