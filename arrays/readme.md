@@ -39,7 +39,7 @@ Arrays contain elements that are separated by commas `,`. The elements can be an
 const squares = [1, 4, 9, 16, 25];
 ```
 
-Let's imagine an adventurer named Rynn. Rynn has a magic backpack that can hold everything she needs for her adventures.
+Let's imagine an adventurer named Rynn. Rynn has a magic backpack that can hold everything they need for their adventures.
 
 ```js
 const backpack = [
