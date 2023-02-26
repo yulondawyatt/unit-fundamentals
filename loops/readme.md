@@ -15,7 +15,7 @@ console.log("The number is: ", 5);
 
 Would you be excited about writing 1000 lines of code like this? Technically, this code is fine and works as expected. But this task seems so tedious. You are likely thinking "there must be a better way." Programmers delight when they can work smarter rather than harder and write their code more efficiently and elegantly. Programmers generally do not enjoy copy-pasting code repeatedly and making minor tweaks for hours or days on end.
 
-Just because coders like to make more efficient and elegant code doesn't mean that that is how their code starts out.
+Just because coders like to make more efficient and elegant code doesn't mean that that is how their code starts out. When starting out, writing a short bit of elegant code might take longer than copying and pasting. When you look at a solution that is short, clear and elegant it is usually a sign of a lot of thought, effort and skill. 
 
 Making your code DRY(er) takes practice. Often you'll start by copy-paste and tweaking it. Then when you're starting to see the patterns, you can upgrade your code to something more DRY, which is a good way to do things! If you try to code the perfect solution first, you will likely feel overwhelmed, get stuck, and possibly code solutions to problems you will never have. Therefore, taking smaller steps is the better way to get the code to be how you like.
 
