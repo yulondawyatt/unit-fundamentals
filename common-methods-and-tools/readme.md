@@ -8,7 +8,7 @@ However, you'll encounter some really common problems, like converting a string 
 
 JavaScript has many built-in methods that will provide you with some handy functionality.
 
-The best way to learn built-in methods is to learn about a small number of them, figure out how they work, how to use the documentation, and learn how to google for what you need. You don't need to memorize all the methods. You will naturally begin to memorize some of the ones you use most often. For the ones you use less frequently, it's totally ok to look them up.
+The best way to learn built-in methods is to learn about a small number of them: figure out how they work, how to use the documentation, and learn how to google for what you need. You don't need to memorize all the methods. You will naturally begin to memorize some of the ones you use most often. For the ones you use less frequently, it's totally ok to look them up.
 
 ## Learning Objectives
 
@@ -23,7 +23,7 @@ The best way to learn built-in methods is to learn about a small number of them,
 
 You have a number with a type of string: "33". How can you convert it to a number?
 
-You can use the Number() method:
+You can use the [Number()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) method:
 
 ```js
 let myNumber = "33";
@@ -32,13 +32,13 @@ console.log(myNumber, typeof myNumber);
 Math.random();
 ```
 
-If you want a random number, you can use the Math.random() method:
+If you want a random number, you can use the [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)method:
 
 ```js
 console.log(Math.random());
 ```
 
-Math.random() will give you a floating point number between 0 and 1. How could you do it if you want the range of random numbers to be between (and including) 1 and 10?
+`Math.random()` will give you a floating point number between 0 and 1. How could you do it if you want the range of random numbers to be between (and including) 1 and 10?
 
 Start with the documentation for [Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random).
 
@@ -55,12 +55,14 @@ Adding a comment about where you found helpful information will be useful when y
 // Get a random number with a range of 1 to 10
 // Add min = 1 and max = 10 to be the defaults
 function getRandomInt(min = 1, max = 10) {
-return Math.floor(Math.random() \* (max - min + 1) + min);
-// The maximum is inclusive, and the minimum is inclusive
+  return Math.floor(Math.random() * (max - min + 1) + min);
+  // The maximum is inclusive, and the minimum is inclusive
 }
 
+// Run this a few times to confirm you are getting all the numbers
 console.log(getRandomInt());
-
+// Try with a different range:
+// console.log(getRandomInt(0, 2));
 ```
 
 ### How to copy code examples and use them correctly
@@ -85,8 +87,8 @@ It's also important to note that your early code will be messy, have issues like
 ### .toUpperCase()
 
 You can make all your text capital letters using a string method.
-Look at the documentation. First, you may notice that this method says `String.prototype.toUpperCase()`. When you see this syntax (with `prototype` in the middle),
-you can attach the function to your value when you see the word prototype. This is in contrast to the Math method, where you have to start with the word `Math` and then add `.something()`. You'll learn more about the keyword prototype later in the course.
+
+Google for and then look at the documentation at MDN. First, you may notice that this method says `String.prototype.toUpperCase()`. When you see this syntax (with `prototype` in the middle), you can attach the function to your value when you see the word prototype. This is in contrast to the Math method, where you have to start with the word `Math` and then add `.something()`. You'll learn more about the keyword prototype later in the course.
 
 As you read the documentation, there are a few sections. They generally show a pattern that shows a demo, then the syntax and some other sections that may or may not have the information you are looking for. Finding what you need in documentation is a skill you'll build over time.
 

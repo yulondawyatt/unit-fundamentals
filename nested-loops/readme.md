@@ -64,6 +64,29 @@ pairs[1][0] = "Neil Patrick Harris";
 console.log(pairs);
 ```
 
+## Create a nested loop
+
+Oftentimes, when beginning to code, there is a tendency to try to code linearly (like from left to right). Since most people are used to writing text in this style. However, code is better suited writing from the outside in.
+
+Start with the outside loop and confirm it works as expected:
+
+```js
+for (let i = 0; i < 5; i++) {
+  console.log("The value of i is:", i);
+}
+```
+
+Now create the inner loop
+
+```js
+for (let i = 0; i < 5; i++) {
+  console.log("The value of i is:", i);
+  for (let j = 0; i < 3; j++) {
+    console.log("The value of j is:", j);
+  }
+}
+```
+
 ## Loop over a 2D array
 
 Let's create a simple grid.
@@ -77,8 +100,6 @@ const grid = [
 ```
 
 The goal will be to print each item in numeric order.
-
-Oftentimes, when beginning to code, there is a tendency to try to code linearly (like from left to right). Since most people are used to writing text in this style. However, code is better suited writing from the outside in.
 
 It is also important to figure out how to code small testable steps. If you make a mistake in three lines of code, it is easier to find the mistake. If you wait until you have coded 30 lines of code, hunting for your mistake(s) becomes much harder.
 

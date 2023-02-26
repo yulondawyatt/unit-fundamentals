@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Imagine you have a grocery list and want to write a program so you can see your grocery list, then add, delete, and modify items on the list. How could you do it with code? Would you use a string? A number? A boolean? None of these data types make sense for a grocery list. We need new datatype called an array that will allow us to store many items in one place.
+Imagine you have a grocery list and want to write a program so you can see your grocery list on your phone instead of on paper, and then you want to be able to add, delete, and modify items on the list. How could you do it with code? Would you use a string? A number? A boolean? None of these data types make sense for a grocery list. We need new datatype called an array that will allow us to store many items in one place.
 
 ## Learning Objectives
 
@@ -137,7 +137,7 @@ for (let i = 0; i < backpack.length; i++) {
 // I take out my hair clip. I clean it and carefully put it back.
 // I take out my kitten food. I clean it and carefully put it back.
 // I take out my coin pouch. I clean it and carefully put it back.
-// I take out my clowder of fierce kittens. I clean it and carefully put it back.
+// I take out my fierce kitten. I clean it and carefully put it back.
 ```
 
 You can also iterate with a different number of steps:
@@ -161,7 +161,7 @@ for (let i = 0; i < backpack.length; i++) {
   }
 }
 
-// A lovely sprite has enchanted my bedazzled boomerang.
+// A lovely sprite has enchanted my boomerang.
 // A lovely sprite has enchanted my tent.
 // A lovely sprite has enchanted my kitten food.
 ```
@@ -203,6 +203,7 @@ function checkContents(array, favNumber = 0) {
 }
 
 checkContents(backpack);
+checkContents(backpack, 8);
 ```
 
 ## An array's type

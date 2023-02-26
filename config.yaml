@@ -83,7 +83,7 @@ sequence:
 ############################################################
 #               SPRINT 2
 ############################################################
-  Coding with Objects:
+  Objects and Collections:
     - name: Objects # Block 1
       pursuit_path: objects
       kind: lesson

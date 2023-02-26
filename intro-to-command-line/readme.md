@@ -4,7 +4,9 @@
 
 People interact with their operating system (be it Mac OS, Windows, or Linux) through the Graphical User Interface - or, in short, the GUI. GUIs use graphics, along with a keyboard and a mouse, to provide an easy-to-use interface. They provide windows, pull-down menus, buttons, scrollbars, and icons, enabling users to interact with the operating system or application.
 
-A command line interface (CLI) enables users to type commands in a terminal or console window to interact with an operating system. Users input commands and (usually) receive responses back from the system. The command-line, while simpler in appearance is more powerful and typically faster to use than a GUI.
+A command line interface (CLI) enables users to type commands in a terminal or console window to interact with an operating system. Users input commands and (usually) receive responses back from the system. The command-line, while simpler in appearance, is more powerful and typically faster to use than a GUI.
+
+Once you learn the basic structure of how to run things in a CLI and learn some basic commands, each subsequent set of commands will become easier to learn. This is unlike a GUI, which will be different for every program and each tends to have its own idiosyncrasies.
 
 **Note**: We utilize "terminal" and "command line" interchangeably here - though they aren't exactly the same thing.
 
@@ -25,6 +27,51 @@ By the end of this lesson, you should be able to:
 
 <hr>
 
+## Your Mac's File Structure
+
+### Computer filesystem
+
+In using your computer, you usually have a few places where you save files (like Desktop or Downloads), and when you install things it only requires you to click on a few prompts.
+
+Therefore, you may not have taken the time to think about how your computer organizes itself under the hood. As a developer, you'll use aspects of your computer that most people don't know about.
+
+Pretty much all computers are organized in a hierarchical filesystem. This means that there is a top-level directory, which contains subdirectories, which include directories.
+
+Here's an example. Your computer should have a similar layout:
+
+```
+/
+├── Applications
+├── Library
+├── System
+├── Users
+    ├── YOUR_USER_NAME*
+        ├── Applications
+            ├── Zoom
+            │ └── Recordings
+        ├── Desktop
+        ├── Documents
+        ├── Downloads
+        | ├── ls_ex1.png
+        | ├── ls_ex2.png
+        | └── ls_ex3.png
+        ├── Library
+        ├── Movies
+        ├── Music
+        ├── Pictures
+        ├── Public
+├── tmp
+├── usr
+└── var
+
+```
+
+On a mac, `/` is the root directory and <YOUR_USERNAME> will be named after the username you chose for your Mac. The folder with your username is also referred to as your `home` directory.
+
+File hierarchies are often described like family trees.
+
+In the above example `Applications` is the `parent` directory of `Zoom` and `Recordings` is a `child` directory of `Zoom`. `Documents` and `Download` would be siblings.
+
 ## Getting Started
 
 We recommend using `iTerm`, which you should have installed during the setup day.
@@ -43,30 +90,28 @@ The `~` symbol stands for your home directory. This is the default directory you
 
 ## Finding Where We Are
 
-You are always in a directory (AKA folder) in the console. The terminal's currently selected directory is called the working directory. You can see where you are using `pwd` (AKA "print working directory").
+You are always in a directory (AKA folder) in the console. The terminal's currently selected directory is called the working directory. You can see where you are using `pwd` (which is short for "**p**rint **w**orking **d**irectory").
 
 ```bash
 $ pwd
 # /Users/yourUserNameHere
 ```
 
-Depending on your shell configuration, it may show you the current directory at any given time.
-
 Before we get into other commands, let's break down some syntax.
 
 ## Command syntax
 
-All terminal commands follow the same general convention, which can be similar to a sentence.
+All terminal commands follow the same convention, which can be similar to a sentence.
 
 ```
 commandName -flags parameters
 ```
 
-Let's break this down:
+Let's break it down.
 
 ### commandName
 
-Command name is the name of a utility or program that runs. Examples are `ls`, `cd`, `pwd`, etc. You can think of these like verbs
+Command name is the name of a utility or program that runs. Examples are `ls`, `cd`, `pwd`, etc. You can think of these like verbs and are the minimum required to run something in terminal.
 
 ```bash
 $ pwd
@@ -74,7 +119,7 @@ $ pwd
 
 `pwd` - print the working directory:
 
-**parameters**
+#### Single parameter
 
 Often you want to tell the command WHAT to act on. So parameters are the names of files or directories you want to do something with. You can think of these like verbs
 
@@ -82,7 +127,9 @@ Often you want to tell the command WHAT to act on. So parameters are the names o
 $ cd Documents
 ```
 
-`cd` into the directory `Documents`.
+`cd` (**c**hange **d**irectory) into the directory `Documents`.
+
+#### Multiple parameters
 
 Some commands let you specify multiple parameters, which you do just by putting a space between each one.
 
@@ -90,21 +137,21 @@ Some commands let you specify multiple parameters, which you do just by putting 
 $ touch first.txt second.txt
 ```
 
-`touch` create or update the last time a file was `touched` the files `first.txt` and `second.txt`
+The `touch` program creates (if the files don't exist) or updates the last time a file was `touched` (will update the timestamp of `Date Modified`) the files `first.txt` and `second.txt`
+
+#### Default parameters
 
 Some commands also have a default value. A value that is implied if no arguments are supplied.
-
-````
 
 For example, if we type `cd` it will automatically take us to the home directory, also known as `~`.
 
 ```bash
 $ cd
-````
+```
 
 **flags**
 
-Many commands take flags, which modify the way a command behaves.
+Many commands take flags, which modify the way a command behaves. For example you may be asked to "please read from a list." By default, you would read the first name. But if the person asks "please read all the details from a list." You would read all the details instead.
 
 ```bash
 $ ls -l Documents
@@ -125,10 +172,10 @@ Hidden directories start with a `.` like `.git`. Directories are hidden as a way
 To combine multiple flags, just put them next to each other.
 
 ```bash
-$ ls -lap Documents
+$ ls -alp Documents
 ```
 
-This is the equivalent of writing `ls -l -a -p Documents`.
+This is the equivalent of writing `ls -a -l -p Documents`.
 
 Can you figure out what `-p` does?
 
@@ -138,7 +185,7 @@ Finally, try out various combinations and see what the results are! This is the 
 
 ## Flags Documentation
 
-To see the possible flags for any command, type `man` (for manual) and the command you want to look up. This will open an interactive window where you can scroll up and down using the arrow keys—press `q` to quit. It is helpful if you make your terminal full-screen to read the text provided. The `man` command is available for all terminal commands.
+To see the possible flags for any command, type `man` (for manual) and the command you want to look up - no googling needed! This will open an interactive window where you can scroll up and down using the arrow keys—press `q` to quit. It is helpful if you make your terminal full-screen to read the text provided. The `man` command is available for all terminal commands.
 
 ```bash
 $ man ls
@@ -158,7 +205,7 @@ We can also list the contents of any directory by just providing the path.
 
 ![ls output](./assets/ls_ex2.png)
 
-And we can change how the output looks by providing a flag! The most useful one is probably `-l` because it makes the output `long`, which puts every result on its line, making it easier to read when you have a lot of files.
+And we can change how the output looks by providing a flag. The most useful one is probably `-l` because it makes the output `long`, which puts every result on its line, making it easier to read when you have a lot of files.
 
 ![ls output](./assets/ls_ex3.png)
 
@@ -182,10 +229,6 @@ $ pwd
 # /Users/jabyess
 ```
 
-File hierarchies are often described like family trees.
-
-In the above example `Users` is the `parent` directory of `jabyess` and `Downloads` is a `child` directory of `jabyess`. `Documents` and `Download` would be siblings.
-
 ### Relative vs. Absolute paths
 
 A crucial concept in navigating directories is thinking about _how to specify where we go_.
@@ -197,51 +240,6 @@ Think of absolute paths like a street address or GPS coordinates. They are alway
 Relative paths are different. You can think of them more like directions. To understand a relative path you need to know **where you are** AND **where you're going**. If you are at the store, what steps do you need to take to go home?
 
 Understanding the difference between these two concepts will help you navigate your computer.
-
-### Computer filesystem
-
-Pretty much all computers are organized in a hierarchical filesystem. This means that there is a top-level directory, which contains subdirectories, which include directories.
-
-Here's an example, your computer should have a similar layout:
-
-```
-/
-├── Applications
-├── Library
-├── System
-├── Users
- ├── Shared
- │ ├── SC Info
- │ └── adi
- └── jabyess *
- ├── Applications
- ├── Desktop
- ├── Documents
- ├── Zoom
- │ └── 2020-09-05 HTMLWorkshop #3
- ├── ls_ex1.png
- ├── ls_ex2.png
- └── ls_ex3.png
- ├── Downloads
- ├── Dropbox
- ├── Exercism
- ├── Library
- ├── Movies
- ├── Music
- ├── Pictures
- ├── Public
- ├── curriculum
- ├── repos
- ├── sandbox
- └── zulip
-├── tmp
-├── usr
-└── var
-
-* is the home directory
-```
-
-On a mac, `/` is the root directory.
 
 `cd` to it and then `ls` to see what's inside - you'll discover similar folder names as above (though some were excluded for brevity).
 
@@ -267,9 +265,9 @@ Since `~` always means the home directory, you can think of it as a substitution
 
 There are two special symbols that you should know when navigating relatively.
 
-**.** represents the current directory
+`.` represents the current directory
 
-**..** represents the parent directory
+`..` represents the parent directory
 
 So if you want to go up a directory, regardless of where you are, you can type:
 
@@ -299,19 +297,19 @@ Think of the `.` as "start here". Therefore the `./` can be thought of as "start
 
 ## Creating Files and Folders
 
-The `touch` command creates a new file with the provided name. If the file already exists, nothing happens. For example:
+The `touch` command creates a new file with the provided name. If the file already exists, nothing will appear to change in terminal: however the timestamp for `date last modified` would be updated. For example:
 
 ```bash
 $ touch hello.js
 ```
 
-This command will create a new JavaScript file with the name `hello.js` in the current directory. If the operation is successful, it won't give you any feedback. You can check by running the `ls` command - you should now see this file listed in the directory. Try to run
+This command will create a new JavaScript file with the name `hello.js` in the current directory. If the operation is successful, it won't give you any feedback. You can check by running the `ls` command - you should now see this file listed in the directory. Try to run the command again (press the up arrow):
 
 ```bash
 $ touch hello.js
 ```
 
-Again, what happens?
+What happens?
 
 When using `touch` you can create files in other locations. You can include a path that can be an absolute or relative path.
 

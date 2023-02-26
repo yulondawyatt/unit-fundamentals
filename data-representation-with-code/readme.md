@@ -170,3 +170,9 @@ const accounts = [
 Each object above represents a simplified user's account. Because the amounts aren't necessarily unique, a new key, `id`, was added to help distinguish each object. IDs can be helpful when you want to represent a real-world idea that needs some unique descriptor.
 
 We would imagine that a user logs in to their account. Our user Rynn has two bank accounts, a saving's account with an `id` of 1 and a checking account with an `id` of 5. She selects the checking account so she can deposit $1000 into the correct account. The app would look up the account by the `id` number and update the amount.
+
+- Rynn logs in and has access to bank accounts 1 and 5
+  - a function would check which bank accounts belong to Rynn based on her login information.
+- Rynn selects bank account with an id of 5
+- Rynn deposits $1000, which changes the `amount` in the object with an an id of 5.
+- Rynn can update other personal details and her bank accounts can still be found.
