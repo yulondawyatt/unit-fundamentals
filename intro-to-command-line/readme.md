@@ -70,7 +70,7 @@ On a mac, `/` is the root directory and <YOUR_USERNAME> will be named after the 
 
 File hierarchies are often described like family trees.
 
-In the above example `Applications` is the `parent` directory of `Zoom` and `Recordings` is a `child` directory of `Zoom`. `Documents` and `Download` would be siblings.
+In the above example `Applications` is the `parent` directory of `Zoom` and `Recordings` is a `child` directory of `Zoom`. `Documents` and `Downloads` would be siblings.
 
 ## Getting Started
 
