@@ -71,6 +71,21 @@ console.log(myName);
 // Uncaught ReferenceError: myName is not defined
 ```
 
+A function can call itself. This is called recursion.
+
+```js
+function countdown(start) {
+  console.log("Countdown!", start);
+  if (start != 0) {
+    return countdown(start - 1);
+  }
+}
+
+console.log(countdown(10));
+```
+
+Try to draw out the steps and values of start to help you understand function scope.
+
 ## Module scope
 
 JavaScript can be split up into modules. You can create multiple files with JavaScript and then use them together. Typically there is one module per file. To create files as modules, we would have to do some more set-up, which we will cover in a later lesson. For now, we can confirm that code in separate files is not in the same scope.
