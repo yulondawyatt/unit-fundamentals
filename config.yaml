@@ -83,7 +83,7 @@ sequence:
 ############################################################
 #               SPRINT 2
 ############################################################
-  Objects and Collections:
+  Problem Solving with Code:
     - name: Objects # Block 1
       pursuit_path: objects
       kind: lesson
@@ -124,7 +124,7 @@ sequence:
 ############################################################
 #               SPRINT 3
 ############################################################
-  Coding on Your Machine:
+  Coding Like a Developer:
     - name: Local Environment Setup # Block 1
       elements:
         - kind: guide
