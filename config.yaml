@@ -112,8 +112,8 @@ sequence:
       pursuit_path: reference-types
       kind: lesson
       activity: replit
-    - name: TBD Error Handling OR HIGHER ORDER FUNCTIONS # Block 8
-      pursuit_path: # error-handling
+    - name: Accumulator Pattern # Block 8
+      pursuit_path: accumulator-pattern
       kind: lesson
       activity: replit
     - name: Skill Honing
@@ -135,25 +135,25 @@ sequence:
       pursuit_path: markdown
       kind: lesson
       activity: repository
-    - name: Introduction to the Command Line # Block 1
+    - name: Introduction to the Command Line # Block 2
       pursuit_path: intro-to-command-line
       kind: lesson
       activity: repository
-    - name: Git # Block 2
+    - name: Git # Block 3
       pursuit_path: git
       kind: lesson
       activity: repository
-    - name: GitHub Setup # Block 3
+    - name: GitHub Setup # Block 4
       elements:
         - kind: guide
           pursuit_path: external-tools
           pursuit_subpath: github
         - kind: recording
-    - name: GitHub # Block 3
+    - name: GitHub # Block 4
       pursuit_path: github
       kind: lesson
       activity: repository
-    - name: Submit GitHub Username # Block 3
+    - name: Submit GitHub Username # Block 4
       kind: task
       activity: canvas_url
       activity_description: "<p>Once you sign up for GitHub, submit the URL to your GitHub profile. It should have the following format, where 
@@ -165,26 +165,18 @@ sequence:
       <p>You should be able to copy and paste from the location bar in your browser.</p>"
       points_possible: 0
 
-    - name: JavaScript on Your Machine # Block 4
+    - name: JavaScript on Your Machine # Block 5
       pursuit_path: javascript-on-your-machine
       kind: lesson
       activity: repository
-    - name: Accumulator Pattern # Block 5 
-      pursuit_path: accumulator-pattern
+    - name: Higher Order Functions # Block 6 
+      pursuit_path: higher-order-functions
       kind: lesson
       activity: repository
-    # - name: TBD NATIVE ARRAY METHODS OR NEW LESSON # Block 6 
-    #   pursuit_path: # tbd
-    #   kind: lesson
-    #   activity: repository
-    # - name: TBD NATIVE ARRAY METHODS OR INSTRUCTOR LED REVIEW SESSION # Block 7 
-    #   pursuit_path: # tbd
-    #   kind: lesson
-    #   activity: repository
-    # - name: Review Day # Block 8
-    #   pursuit_path: # tbd
-    #   kind: lesson
-    #   activity: repository
+    - name: Higher Order Native Array Methods # Block 7 
+      pursuit_path: higher-order-native-array-methods
+      kind: lesson
+      activity: repository
     - name: Dinosaur Museum
       pursuit_path: dinosaur-museum
       kind: project
