@@ -84,7 +84,7 @@ function countdown(start) {
 console.log(countdown(10));
 ```
 
-Try to draw out the steps and values of start to help you understand function scope.
+Try to draw out the steps and values of `start` to help you understand function scope.
 
 ## Module scope
 
