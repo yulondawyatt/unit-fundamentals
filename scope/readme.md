@@ -88,7 +88,7 @@ Try to draw out the steps and values of `start` to help you understand function 
 
 ## Module scope
 
-JavaScript can be split up into modules. You can create multiple files with JavaScript and then use them together. Typically there is one module per file. To create files as modules, we would have to do some more set-up, which we will cover in a later lesson. For now, we can confirm that code in separate files is not in the same scope.
+JavaScript can be split up into modules. You can create multiple files with JavaScript and then use them together. Typically there is one module per file. You can try this in NodeJS (if you are using an app like repl.it make sure you choose NodeJS and not html/css/JavaScript - as the option).
 
 **index.js**
 
@@ -105,6 +105,22 @@ console.log(myConstant);
 
 // Uncaught ReferenceError: myConstant is not defined
 ```
+
+You can `export` variables and `import` them. Currently, NodeJS is in a transition period where you will see both the old syntax and the new syntax. As of 2023, the old syntax is still the default and to use the newer syntax, more configuration would be needed.
+
+To export `myConstant`, you would add the following to the bottom of the **index.js** file:
+
+```js
+module.exports = { myConstant };
+```
+
+To import `myConstant` to the **myFile.js** file, you would add to the top of the file:
+
+```js
+const { myConstant } = require("./index.js");
+```
+
+To check that it works, make sure that `myFile.js` can now log the value of `myConstant`.
 
 ## Looking up scope
 
