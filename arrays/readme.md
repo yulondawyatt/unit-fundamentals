@@ -86,7 +86,7 @@ And you can use variables:
 ```js
 const index = 4;
 
-console.log(backpack[4]);
+console.log(backpack[index]);
 // "Tums"
 ```
 
@@ -129,7 +129,7 @@ for (let i = 0; i < backpack.length; i++) {
   );
 }
 
-// I take out my bedazzled boomerang. I clean it and carefully put it back.
+// I take out my boomerang. I clean it and carefully put it back.
 // I take out my map. I clean it and carefully put it back.
 // I take out my solar-powered super lantern. I clean it and carefully put it back.
 // I take out my tent. I clean it and carefully put it back.

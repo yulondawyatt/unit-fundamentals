@@ -88,17 +88,19 @@ Try to draw out the steps and values of `start` to help you understand function 
 
 ## Module scope
 
-JavaScript can be split up into modules. You can create multiple files with JavaScript and then use them together. Typically there is one module per file. You can try this in NodeJS (if you are using an app like repl.it make sure you choose NodeJS and not html/css/JavaScript - as the option).
+JavaScript can be split up into modules. You can create multiple files with JavaScript and then use them together. Typically there is one module per file. You can try this in NodeJS (if you are using an app like repl.it make sure you choose NodeJS and not html/css/JavaScript as the option).
 
-**index.js**
+
+You can create a separate file, but the code written here will not know about the code in `index.js`.
+
+
+**myFile.js**
 
 ```js
 const myConstant = 5;
 ```
 
-You can create a separate file, but the code written here will not know about the code in `index.js`.
-
-**myFile.js**
+**index.js**
 
 ```js
 console.log(myConstant);
@@ -106,21 +108,21 @@ console.log(myConstant);
 // Uncaught ReferenceError: myConstant is not defined
 ```
 
-You can `export` variables and `import` them. Currently, NodeJS is in a transition period where you will see both the old syntax and the new syntax. As of 2023, the old syntax is still the default and to use the newer syntax, more configuration would be needed.
+You can `export` variables and `import` them. Currently, NodeJS is in a transition period where you will see both the old syntax and the new syntax. As of 2023, the old syntax is still the default and to use the newer syntax, more configuration would be needed. The example given will be with the older syntax. 
 
-To export `myConstant`, you would add the following to the bottom of the **index.js** file:
+To export `myConstant`, you would add the following to the bottom of the **myFile.js** file:
 
 ```js
 module.exports = { myConstant };
 ```
 
-To import `myConstant` to the **myFile.js** file, you would add to the top of the file:
+To import `myConstant` to the **index.js** file, you would add to the top of the file:
 
 ```js
-const { myConstant } = require("./index.js");
+const { myConstant } = require("./myFile.js");
 ```
 
-To check that it works, make sure that `myFile.js` can now log the value of `myConstant`.
+To check that it works, run the `index.js` file. 
 
 ## Looking up scope
 

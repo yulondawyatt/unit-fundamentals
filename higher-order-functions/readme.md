@@ -29,7 +29,7 @@ Have you ever visited a website and, after a minute or so, received a pop-up not
 
 `setTimeOut` is a higher-order global function that accepts two arguments. The first one is the callback function, and the second is a number that represents the number of milliseconds to wait. (2000 milliseconds equals 2 seconds).
 
-SetTimeout is opinionated about the code you write inside the callback. It can be whatever you want. This makes it a very customizable function and allows many opportunities to reuse it however and whenever needed.
+`setTimeout` is unopinionated about the code you write inside the callback. It can be whatever you want. This makes it a very customizable function and allows many opportunities to reuse it however and whenever needed.
 
 ```js
 setTimeout(() => {
