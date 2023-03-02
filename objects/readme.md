@@ -30,7 +30,7 @@ const carObject = {
 };
 ```
 
-Every value has a descriptive key, and it is easy to understand what each property is referring to. In this lesson, you'll learn how to access, add and update properties in an object.
+Every value has a descriptive key, and it is easy to understand what each property is refering to. In this lesson, you'll learn how to access, add, and update properties in an object.
 
 ## Learning Objectives
 
@@ -149,16 +149,6 @@ const mockArray = {
   1: "second",
   2: "third",
 };
-```
-
-If you want to check if something is an array, there is a function:
-
-```js
-const shortNumberArray = [1, 2, 3];
-console.log(typeof shortNumberArray);
-// object
-console.log(Array.isArray(shortNumberArray));
-// true
 ```
 
 ## JSDoc object notation

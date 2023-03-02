@@ -1,6 +1,6 @@
 # Problem Solving Methodologies
 
-Learning to code is only one part of being a software developer. The most important skill to develop is your ability to identify and solve problems. While you may not consciously know it, everyone employs different techniques and strategies when it comes to solving different kinds of problems.
+Learning to code is only one part of being a software developer. The most important skill to develop is your ability to identify and solve problems. While you may not consciously know it, everyone employs different techniques and strategies when it comes to solving different kinds of problems. A developer is someone who knows how to problem solve and then can solve problems by writing code in the way that computers solve problems.
 
 In this lesson, you'll learn about some common ways to solve problems. You'll also deep dive into one particular problem solving technique. Finally, you'll learn how to apply those techniques to typical coding challenges you might see during an interview.
 

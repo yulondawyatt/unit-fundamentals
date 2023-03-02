@@ -109,7 +109,7 @@ commandName -flags parameters
 
 Let's break it down.
 
-### commandName
+### `commandName`
 
 Command name is the name of a utility or program that runs. Examples are `ls`, `cd`, `pwd`, etc. You can think of these like verbs and are the minimum required to run something in terminal.
 
@@ -121,7 +121,7 @@ $ pwd
 
 #### Single parameter
 
-Often you want to tell the command WHAT to act on. So parameters are the names of files or directories you want to do something with. You can think of these like verbs
+Often you want to tell the command WHAT to act on. So parameters are the names of files or directories you want to do something with. You can think of these like parameters like nouns.
 
 ```bash
 $ cd Documents
@@ -137,7 +137,7 @@ Some commands let you specify multiple parameters, which you do just by putting 
 $ touch first.txt second.txt
 ```
 
-The `touch` program creates (if the files don't exist) or updates the last time a file was `touched` (will update the timestamp of `Date Modified`) the files `first.txt` and `second.txt`
+The `touch` program creates (if the files don't exist) or updates the last time a file was `touched` (will update the timestamp of `Date Modified`).
 
 #### Default parameters
 
@@ -151,7 +151,7 @@ $ cd
 
 **flags**
 
-Many commands take flags, which modify the way a command behaves. For example you may be asked to "please read from a list." By default, you would read the first name. But if the person asks "please read all the details from a list." You would read all the details instead.
+Many commands take flags, which modify the way a command behaves. For example you may be asked to "please read from a list." By default, you plan to read the first name. But if the person asks "please read all the details from a list." You would read all the details instead of just the first names.
 
 ```bash
 $ ls -l Documents
@@ -180,6 +180,8 @@ This is the equivalent of writing `ls -a -l -p Documents`.
 Can you figure out what `-p` does?
 
 Try to write out (or say out loud) what `ls -lap Documents` does in your own words.
+
+Is there a difference between `-alp` and `-lap`?
 
 Finally, try out various combinations and see what the results are! This is the best way to improve your knowledge and abilities.
 
@@ -382,7 +384,7 @@ open index.html
 
 ## Resources
 
-If you would like some additional visual walkthroughs, here are some good places to start.
+A lot of information was covered in this lesson. If you would like some additional visual walkthroughs, here are some good places to start.
 
 - Tree House: [Introduction to the Mac OS X Command Line](http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line)
 - Git Tower: [Command Line 101](https://www.git-tower.com/learn/git/ebook/en/command-line/appendix/command-line-101)

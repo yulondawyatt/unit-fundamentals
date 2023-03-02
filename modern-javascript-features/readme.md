@@ -1,6 +1,6 @@
 # Modern JavaScript Features
 
-JavaScript has changed a lot since its creation in the 90s. New features and functions have been added infrequently since that time. One of the biggest jumps in features for JavaScript was with the release of ECMAScript 6. Also called ES2015 (because it was released in 2015) or ES6 (because it was the successor to version 5, which had been released in 2009), this "release" of JavaScript added several new features for modern programmers.
+JavaScript has changed a lot since its creation in the 90s. New features and functions have been added infrequently since that time. One of the biggest jumps in features for JavaScript was with the release of ECMAScript 6. The features introduced in ES6 are typically referred to as `modern`.
 
 In this lesson, you'll read about ECMAScript, the specification document that manages JavaScript. You'll also learn about some of the powerful features introduced by ES6.
 
@@ -31,7 +31,9 @@ In general, this is not something to worry about now. These nuances will only be
 
 ### Newer versions of JavaScript
 
-One of the biggest jumps for JavaScript was the introduction of ES6, also called ES2015. Although not quite new anymore, it continues to be a significant milestone for JavaScript in that the changes introduced improved some of the weaker parts of JavaScript. Since ES6, a new system of smaller updates that are added annually has been in place and it is unlikely such a major update will happen again. The newer the feature, the more critical it is to look at its compatibility with different browsers and versions of NodeJS.
+One of the biggest jumps for JavaScript was the introduction of ES6 (because it succeeded ES5, which was released in 2009), also called ES2015 (because it was released in teh year 2015). Although not quite new anymore, it continues to be a significant milestone for JavaScript in that the changes introduced improved some of the weaker parts of JavaScript.
+
+Since ES6, a new system of smaller updates that are added annually has been in place and it is unlikely such a major update will happen again. The newer the feature, the more critical it is to look at its compatibility with different browsers and versions of NodeJS.
 
 In this course, we will cover standard features in the JavaScript industry. While there are dozens of features to learn, this content will only cover those most useful and standardized. You should feel free to explore -- keep in mind that some newer features can be more fragile depending on the environment.
 

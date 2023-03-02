@@ -25,19 +25,21 @@ Why did you create so many versions of your essay? It's likely because you had t
 
 ## Framing & Background
 
-A **version control system** (or VCS) provides an automatic way to track changes in software projects. This system gives creators the power to view previous versions of files and directories. It also lets them develop speculative features without disrupting the primary codebase. Additionally, it can securely back up the project and its history. And it allows creators to collaborate efficiently and conveniently with each other. Think of it like the "Save" feature on a local document, except every time you click "Save", you create a snapshot of your project that you can return to or share with others anytime.
+A **version control system** (or VCS) provides an automatic way to track changes in software projects. This system gives creators the power to view previous versions of files and directories. It also lets them develop new features without disrupting the work codebase.
+
+Additionally, it can securely back up the project and its history. And it allows creators to collaborate efficiently and conveniently with each other. Think of it like the "Save" feature on a local document, except every time you click "Save", you create a snapshot of your project that you can return to or share with others anytime.
 
 Additionally, version control also makes deploying production websites and web applications much more effortless. We (and most developers) use the version control system called **Git**. Git is an open standard that lets individual developers and large organizations manage a project as it changes over time.
 
 Unlike pressing the save button for a file, `git` requires three steps:
 
-- Choosing which files to `save`. This is called `staging` and is used with the command `add`. Within a project, you may only want to save one file, a few or all.
+- Choosing which files to `save`. This is called `staging` and is used with the command `add`. Within a project, you may only want to save one file, a few, or all.
 - Saving the files. This is called `committing` and is used with the command `commit`
 - Adding a `commit message`. Each time you save (or commit) your files it is expected that you explain what the change is. This essential for you to look back at previous version of your code and find the version you want.
 
 ## Getting started
 
-The most common way to use Git is via a command-line program called `git`, which lets us transform an ordinary folder into a repository (or repo for short) that enables us to track changes to our project.
+The most common way to use Git is via a command-line program called `git`, which lets us transform an ordinary folder into a repository (or `repo` for short) that enables us to track changes to our project.
 
 The easiest way to check for Git is to start a terminal window and use `which` at the command line to see if the git executable is already present:
 

@@ -90,7 +90,9 @@ console.log(backpack[index]);
 // "Tums"
 ```
 
-How can you get the last item in an array? Arrays can be any length, and the length can change over the duration of your program.
+How can you always get the last item in an array? Arrays can be any length, and the length can change over the duration of your program.
+
+Setting up a value that can change based on data is referred to as `dynamic`. A value that never changes is usually referred to as `static`. When you write code that does not change with the data it can also be referred to as `hard-coded`.
 
 ```js
 const lastItem = backpack.length - 1;
@@ -206,6 +208,8 @@ checkContents(backpack);
 checkContents(backpack, 8);
 ```
 
+Before running the above code, write out what you think the output will be. Taking the time to make a hypothesis about the outcome and then comparing and contrasting your expectations and results will help you understand the code better and how to fix any unexpected results.
+
 ## An array's type
 
 If you use `typeof` on an array you will get...
@@ -217,6 +221,16 @@ console.log(typeof shortNumberArray);
 ```
 
 An object! We will cover objects in a later lesson and explore why an array has a type of object.
+
+In the meantime, if you want to check if something is an array, there is a method:
+
+```js
+const shortNumberArray = [1, 2, 3];
+console.log(typeof shortNumberArray);
+// object
+console.log(Array.isArray(shortNumberArray));
+// true
+```
 
 ## JSDoc array notation
 

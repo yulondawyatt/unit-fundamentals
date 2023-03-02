@@ -223,6 +223,10 @@ Similar to `undefined` null is the absence of data. However, `null` is typically
 
 For example, when filling out a form, there may be inputs for a home phone number and a cellphone number. But if someone has just one number for both, the value of `null` would help explain that there is no value on purpose for the home phone number, rather than if someone forgot to fill out the field.
 
+Here is a visual that may help you understand the different values possible using a cup with (or without) coffee.
+
+![coffee values](./assets/coffee-values.jpg)
+
 ## Variables
 
 To build a complex program, one must have a way to store values and use them later.

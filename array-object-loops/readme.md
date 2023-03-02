@@ -28,19 +28,19 @@ const crayons = [
 ];
 ```
 
-Let's access the blue color property. Start with the whole array:
+Let's access the blue `color` property. Start with the whole array:
 
 ```js
 console.log(crayon);
 ```
 
-Then the blue object
+Then the blue object:
 
 ```js
 console.log(crayon[1]);
 ```
 
-Then the blue object color property
+Then the blue object color property:
 
 ```js
 console.log(crayon[1].color);
@@ -194,7 +194,7 @@ Oops, nothing happens! The function must be invoked.
 console.log(adventurer.move("east"));
 ```
 
-Notice we've been using this syntax. For example, we've done the following:
+Notice we've been using a similar syntax for built-in methods. For example, we've done the following:
 
 ```js
 myString.toLowerCase();

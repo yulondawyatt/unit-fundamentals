@@ -18,7 +18,7 @@ Let's use Polya's Problem Solving Methodology
 
 - What are you asked to find or show?
 
-- Can you restate the problem in your own words (this problem may be too simple to reword. That's OK!)
+- Can you restate the problem in your own words (this problem may be too simple to reword. That's ok!)
 
 - Can you think of a picture or diagram that might help you understand the problem?
 
@@ -40,6 +40,8 @@ console.log(reverseString(testCase2));
 
 After coming up with your own solution with the class, compare and contrast the different versions.
 
+What do you think of the test cases? Are they good? Would you add or replace any of them?
+
 <details><summary>One solution</summary>
 
 - Create a new array that will hold the letters in reverse
@@ -56,6 +58,8 @@ function reverseString(str) {
   return reversedString;
 }
 ```
+
+<hr>
 
 </details>
 
@@ -102,6 +106,8 @@ function reverseString(str) {
 ```
 
 Notice that we started with a long version and made sure it worked. Then we went back and shortened the solution. This is totally ok!
+
+<hr>
 
 </details>
 

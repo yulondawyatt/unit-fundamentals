@@ -167,7 +167,7 @@ const accounts = [
 ];
 ```
 
-Each object above represents a simplified user's account. Because the amounts aren't necessarily unique, a new key, `id`, was added to help distinguish each object. IDs can be helpful when you want to represent a real-world idea that needs some unique descriptor.
+Each object above represents a simplified user's account. Because the amounts aren't necessarily unique, a new key, `id`, was added to help distinguish each object. IDs can be helpful when you want to represent a real-world idea that needs some unique descriptor and they are never expected to change.
 
 Here is a more detailed view of one user account object.
 

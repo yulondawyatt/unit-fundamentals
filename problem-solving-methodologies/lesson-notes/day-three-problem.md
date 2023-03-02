@@ -84,6 +84,7 @@ function isPalindrome(str) {
 
 - It is all one line! Is this good or bad?
 
+<hr>
 </details>
 
 <details><summary>Another solution</summary>
@@ -100,6 +101,7 @@ function isPalindrome(str) {
 }
 ```
 
+<hr>
 </details>
 
 After coming up with your own solution with the class, compare and contrast the different versions. Is one better than the others?

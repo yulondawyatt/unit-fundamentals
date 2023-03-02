@@ -57,7 +57,7 @@ A lot of hows and whys of coding won't make sense until you start building somet
 
 This lesson will introduce you to some concepts that you'll need to be aware of but won't fully understand until you need to utilize them in a project or have a bug in your code that will require this kind of knowledge to solve.
 
-For now keep in mind:
+For now, keep in mind:
 
 - Anything that _is not_ an explicit primitive type in JavaScript is a reference type. That includes objects, arrays, and functions.
 - `typeof` _is not_ a good way to determine whether or not something is a primitive or reference type.

@@ -2,7 +2,7 @@
 
 Higher-order functions have some functionality that can be combined with your custom functionality.
 
-A common use case is with arrays. You often want to loop over an array, and _do something_. You may wish to filter your array for values that are always above 0. You may want to check if every array item contains a specific value, or you may want to create a new array that has transformed an old array in some way.
+A common use-case is with arrays. You often want to loop over an array, and _do something_. You may wish to filter your array for values that are always above 0. You may want to check if every array item contains a specific value, or you may want to create a new array that has transformed an old array in some way.
 
 You can, of course, create your versions of these higher-order functions. But it is typically faster and easier to use what JavaScript has provided for you.
 
@@ -35,7 +35,7 @@ Read this article on[ programming principles](https://www.artima.com/weblogs/vie
 
 ### Abstraction
 
-When you go to a restaurant and order a slice of pizza, the action you take is simple. However, in the restaurant, many things are happening: the ingredients for the pizza had to be ordered, the cooking area needed to be clean, and the oven turned on, the cook had to prepare and cook the pizza, the manager had to make sure that the restaurant opened on time and that everything is up to code and much more. The process of preparing the pizza has been abstracted away from the customers.
+When you go to a restaurant and order a slice of pizza, the action you take is simple. However, in the restaurant, many things are happening: the ingredients for the pizza had to be ordered, and the oven turned on, the cook had to prepare and cook the pizza, the manager had to make sure that the restaurant opened on time and that everything is up to code and much more. The process of preparing the pizza has been abstracted away from the customers.
 
 Code also can be abstracted. Certain functionality can be tucked away inside of a function so that you can focus on writing clear and maintainable code.
 
@@ -45,7 +45,7 @@ Imagine you are creating new labels for some ice cream. The incoming data is
 const flavors = ["Chocolate", "Vanilla", "Wasabi", "Strawberry"];
 ```
 
-And the label must read `Pursuit's Amazing ${flavor} ice cream`.
+And the label must read `Pursuit's Amazing ${flavor} Ice Cream`.
 
 You could write a for loop to accomplish the task:
 
