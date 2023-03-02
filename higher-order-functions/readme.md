@@ -29,7 +29,7 @@ Have you ever visited a website and, after a minute or so, received a pop-up not
 
 `setTimeOut` is a higher-order global function that accepts two arguments. The first one is the callback function, and the second is a number that represents the number of milliseconds to wait. (2000 milliseconds equals 2 seconds).
 
-`setTimeout` is unopinionated about the code you write inside the callback. It can be whatever you want. This makes it a very customizable function and allows many opportunities to reuse it however and whenever needed.
+`setTimeout` is unopinionated about the code you write inside the callback. It can be whatever you want. This makes it a very customizable function and allows you to stack its functionality with other functionality. This allows for many opportunities to use it however and whenever needed.
 
 ```js
 setTimeout(() => {
@@ -66,6 +66,47 @@ setTimeout(popUpMessage(), 2000);
 ```
 TypeError [ERR_INVALID_CALLBACK]: Callback must be a function. Received undefined
 ```
+
+## Managing code that takes time
+
+All the code you have written so far happens quickly, so the output happens in order. However, JavaScript is `asynchronous`, meaning that it starts a task (code block), and then it does not wait for it to finish before moving on to the next code bock.
+
+What order will the following console logs happen in?
+
+```js
+setTimeout(() => {
+  console.log("I should happen first");
+}, 1000);
+
+setTimeout(() => {
+  console.log("I should happen second");
+}, 5000);
+
+setTimeout(() => {
+  console.log("I should happen third");
+}, 3000);
+
+console.log("I should happen last");
+```
+
+You can rewrite the code above:
+
+```js
+setTimeout(() => {
+  console.log("I should happen first");
+  setTimeout(() => {
+    console.log("I should happen second");
+    setTimeout(() => {
+      console.log("I should happen third");
+      console.log("I should happen last");
+    }, 3000);
+  }, 5000);
+}, 1000);
+```
+
+As you can see, the callback function executes only after its higher-order function has been invoked.
+
+Later, you will start to use code that is asynchronous and you will learn more about how to manage this type of code with real-world scenarios.
 
 ### Write your own higher-order function
 
@@ -143,6 +184,6 @@ console.log(calculator(2, 2, multiply));
 console.log(calculator(100, 10, divide));
 ```
 
-On top of being able to organize your code better, you can continue to customize the `calculator` function to have whatever additional functionality it needs.
+On top of being able to organize your code better, you can continue to customize the `calculator` function to have whatever additional functionality it needs, along with the mathematical operations. You don't have to copy and paste the `calculator` functionality in multiple places, which helps keep your code DRY.
 
-Try it! Try to add a percentage or power function.
+To test yourself on how well you understand callbacks you can try to add a percentage or power function to the above code.

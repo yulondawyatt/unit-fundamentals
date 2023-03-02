@@ -4,7 +4,7 @@
 
 Now that you've been introduced to fundamentals, you can combine what you know to solve more exciting challenges.
 
-However, you'll encounter some really common problems, like converting a string into a number, making all lowercase letters capital, or removing the first item from an array that would be quite tedious to create and re-create over and over again for your coding projects.
+However, you'll also encounter some really common problems, like converting a string into a number, making all lowercase letters capital, or removing the first item from an array that would be quite tedious to create and re-create over and over again for your coding projects.
 
 JavaScript has many built-in methods that will provide you with some handy functionality.
 
@@ -73,14 +73,14 @@ One way developers learn is by copying and modifying code. There are a few thing
 
 When you copy code:
 
-- Provide where you got it from. If a classmate helped you, give them credit.
+- Provide where you got it from. If a classmate helped you, give them credit as well.
 - Only copy small bits of code that fit your specific project. Don't copy someone else's whole project. Change a few words and say it is yours - this is plagiarism.
 - Be ready to explain every line of code you copied.
 - Be sure to modify it and add comments that suit your needs to make it your own.
 
 For this course, the code you copy must represent your current technical ability. If you are stuck or feeling behind, reach out to an instructor. Remember, the ultimate goal of this program is for you to pass a coding interview and get a job as a developer. Therefore you must be able to demonstrate the skills and abilities that you've learned. Submitting work you don't understand to "get it done" will not help you attain your goal.
 
-It's also important to note that your early code will be messy, have issues like too many variables, and your solutions will be inelegant. It can feel tempting to get code that looks better, but if you can't explain what the other code does, it won't help you build your skills. So it's better to write and share your code. Like someone who has begun to learn to paint, your early work will be rough. That's ok! With practice, you'll gain speed, efficiency, and elegance.
+It's also important to note that your early code will be messy, have issues like having too many variables, and your solutions will be inelegant. It can feel tempting to get code that looks better, but if you can't explain what the other code does, it won't help you build your skills. So it's better to write and share your code. Like someone who has begun to learn to paint, your early work will be rough. That's ok! With practice, you'll gain speed, efficiency, and elegance.
 
 ## String methods
 
@@ -88,7 +88,7 @@ It's also important to note that your early code will be messy, have issues like
 
 You can make all your text capital letters using a string method.
 
-Google for and then look at the documentation at MDN. First, you may notice that this method says `String.prototype.toUpperCase()`. When you see this syntax (with `prototype` in the middle), you can attach the function to your value when you see the word prototype. This is in contrast to the Math method, where you have to start with the word `Math` and then add `.something()`. You'll learn more about the keyword prototype later in the course.
+Google for and then look at the documentation at MDN. First, you may notice that this method says `String.prototype.toUpperCase()`. When you see this syntax (with `prototype` in the middle), you can attach the function to your value. This is in contrast to the Math method, where you have to start with the word `Math` and then add `.something()`. You'll learn more about the keyword prototype later in the course.
 
 As you read the documentation, there are a few sections. They generally show a pattern that shows a demo, then the syntax and some other sections that may or may not have the information you are looking for. Finding what you need in documentation is a skill you'll build over time.
 
@@ -104,9 +104,10 @@ console.log(pangram.toUpperCase());
 
 You can replace some text using the `.replace()` method. Let's say you want to change the text To be or not to be to read To code or not to code
 
-Let's look at the documentation.
+Let's look at [the documentation.](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#syntax)
 
-What this method shows is that it takes two parameters pattern and replacement. What do those words mean? Please take a moment to put it in your own words.
+What this method shows is that it takes two parameters `pattern` and `replacement`. What do those words mean? Please take a moment to put it in your own words.
+
 Let's look at the code below:
 
 ```js
@@ -116,7 +117,7 @@ console.log(myQuote);
 // To code or not to be
 ```
 
-The `.replace()` method goes after your value of myQuote, which works. However, this one only changed the first `be`. Your next move would be to look and see if another method fits your needs or to google how to do what you want to do.
+The `.replace()` method goes after your value of myQuote. However, this one only changed the first `be`. Your next move would be to look and see if another method fits your needs or to google how to do what you want to do.
 
 In this case, there is another method that will change all the instances.
 
@@ -128,7 +129,7 @@ console.log(myCompleteQuote);
 
 ### .split()
 
-Here is another string method where you can split the string into an array. `.split()` takes one argument, the character you want to split the words apart with. If you wish to split every letter individually, you will put an empty string. However, if you want every word as its array item, you would pass a quoted space.
+Here is another string method where you can split the string into an array. `.split()` takes one argument, the character you want to split the words apart with. If you wish to split every letter individually, you will put an empty string. However, if you want every word as an array item, you would pass a quoted space.
 
 Using empty string:
 

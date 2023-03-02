@@ -84,15 +84,15 @@ For the code block above:
 
 ## Code Challenges in Replit, using Jest
 
-### Understanding Code Challenges Demo
+Your instructor will have a repl.it project that is ready to have tests added.
 
-### Instructions
+### Understanding Code Challenges Demo
 
 Here, you will learn the components of a test so that you can read and understand the tests better.
 
-There are some syntax and concepts you have not yet learned. That's ok! Just focus on the parts you understand and how you can read tests to understand better what is being asked of you.
+There are some syntax and concepts you have not yet learned. That's ok! Just focus on the parts you understand and how you can read tests to understand better what is being asked of you. Being able to read code out loud is a critical skill for being able to communicate your ideas.
 
-You will not need to learn how to write tests.
+You will not need to learn how to write tests in this module.
 
 ### Create a test
 
@@ -100,11 +100,11 @@ Test whether a function returns the sum of two numbers.
 
 ### Start by writing the first test
 
-The first test will only test if true is equal to true. It will not rely on a function. This is so you can see a simple example and then build your understanding.
+The first test will only test if `true` is equal to `true`. It will not rely on a function. This is so you can see a simple example and then build your understanding.
 
 Go to the `__tests__` folder to the file `index.test.js`
 
-Start by writing a describe function. The `describe` testing suite defines function. Jest must be "downloaded" and configured correctly for this to work.
+Start by writing a `describe()` function. The `describe` testing suite defines function. Jest must be "downloaded" and configured correctly for this to work.
 
 ```js
 describe();
@@ -116,7 +116,9 @@ Describe is a function that takes two arguments. The first one is a string. The 
 describe("a simple example", () => {});
 ```
 
-Next, you will add an `it` function inside the `describe` callback function.
+Next, you will add an `it()` function inside the `describe()` callback function.
+
+Inside of this code block, you will use the `expect()` function and chain the `toBe()` function to it. The arguments given should be the values to compare.
 
 ```js
 describe("a simple example", () => {
@@ -132,7 +134,13 @@ You should now be able to run this code with the green run button.
 
 #### Write the test first
 
-Start with the outer 'shell'.
+Start with the outer 'shell'. In coding, it is best to work from the outside in, rather than linearly (like from left to right):
+
+```js
+describe("sumTwo()", () => {});
+```
+
+Then add the inside code:
 
 ```js
 describe("sumTwo()", () => {
@@ -144,11 +152,11 @@ describe("sumTwo()", () => {
 
 Now, set up the test to test the function.
 
-You will need to call the function with the appropriate arguments. Start by testing `2 + 2`, which should equal 4.
+You will need to call the function with the appropriate arguments. Start by testing `2 + 2`, which should equal `4`.
 
-The actual value will be what the `sumTwo` function returns.
+The actual value will be what the `sumTwo` function returns when `2` and `2` is inputted.
 
-The `expected` value will be what you determined to be the correct result from inputting 2 and 2 as arguments.
+The `expected` value will be what you determined to be the correct result from inputting `2` and `2` as arguments.
 
 Then use the `expect` and `toBe` functions to compare the `actual` value with the `expected value.`
 

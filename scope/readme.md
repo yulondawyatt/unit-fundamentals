@@ -88,11 +88,9 @@ Try to draw out the steps and values of `start` to help you understand function 
 
 ## Module scope
 
-JavaScript can be split up into modules. You can create multiple files with JavaScript and then use them together. Typically there is one module per file. You can try this in NodeJS (if you are using an app like repl.it make sure you choose NodeJS and not html/css/JavaScript as the option).
-
+JavaScript can be split up into modules. You can create multiple files with JavaScript and then use them together. Typically, there is one module per file. You can try this in NodeJS (if you are using an app like repl.it make sure you choose NodeJS and not html/css/JavaScript as the option).
 
 You can create a separate file, but the code written here will not know about the code in `index.js`.
-
 
 **myFile.js**
 
@@ -108,7 +106,7 @@ console.log(myConstant);
 // Uncaught ReferenceError: myConstant is not defined
 ```
 
-You can `export` variables and `import` them. Currently, NodeJS is in a transition period where you will see both the old syntax and the new syntax. As of 2023, the old syntax is still the default and to use the newer syntax, more configuration would be needed. The example given will be with the older syntax. 
+You can `export` variables and `import` them. Currently, NodeJS is in a transition period where you will see both the old syntax and the new syntax. As of 2023, the old syntax is still the default and to use the newer syntax, more configuration would be needed. The example given will be with the older syntax.
 
 To export `myConstant`, you would add the following to the bottom of the **myFile.js** file:
 
@@ -122,7 +120,7 @@ To import `myConstant` to the **index.js** file, you would add to the top of the
 const { myConstant } = require("./myFile.js");
 ```
 
-To check that it works, run the `index.js` file. 
+To check that it works, run the `index.js` file.
 
 ## Looking up scope
 
@@ -136,9 +134,9 @@ if (someNumber === 10) {
 }
 ```
 
-Outside the code blocks for the `if` statement, the value of `someNumber` is defined.
+The definition of `someNumber` is defined outside the code block for the `if` statement.
 
-A JavaScript file starts from the top and loads the values in order. At the top of this file, `someNumber` was defined. JavaScript first checks for a definition inside the `if` code block when `someNumber` is referenced. JavaScript notes that it is not defined inside the block, therefore the next step is to looks up to next code block level, which is the file level in this case. If it can't find it a definition, it will throw an error. In this case, it is found so it can determine the value.
+A JavaScript file starts from the top and loads the values and executers the code in order. At the top of this file, `someNumber` was defined. JavaScript first checks for a definition inside the `if` code block when `someNumber` is referenced. JavaScript notes that it is not defined inside the block, therefore the next step is to looks up to next code block level, which is the file level in this case. Finally, it will look for the value in the global scope. If it can't find a definition, it will throw an error. In this case, it is found so it can determine the value.
 
 If you change the order, you will get an error because `someNumber` only gets defined after the `if` code block has been executed.
 
@@ -148,6 +146,7 @@ if (someNumber === 10) {
 }
 
 const someNumber = 10;
+// ReferenceError: Cannot access 'someNumber' before initialization
 ```
 
 Additionally, if you declare the same variable inside a code block, you can end up with the same variable name existing in two different places with two different values.
@@ -158,10 +157,10 @@ const someNumber = 10;
 if (someNumber === 10) {
   const someNumber = 555;
   console.log(
-    `The outside number is equal to ten! The value of someNumber inside the code block is ${someNumber}`
+    `The outside number is equal to ten! The value of someNumber inside the code block is ${someNumber}` // 555
   );
 }
-console.log(`The value of someNumber outside the of block is ${someNumber}`);
+console.log(`The value of someNumber outside the of block is ${someNumber}`); // 10
 ```
 
 ## Organizing code

@@ -140,8 +140,6 @@ const pangram = [
 
 The first question is for the numbers array. The second question is for the words array.
 
-You don't have to write an answer to the thought questions.
-
 #### `.every()`
 
 1. Determine if every number is greater than or equal to 1

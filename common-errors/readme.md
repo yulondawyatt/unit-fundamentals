@@ -31,7 +31,7 @@ In the example above, you receive the following information:
 1. The error that has occurred is a **`TypeError`**.
 1. The problem is that **`console.lg`** is not a function.
 1. Below, you can see that the error occurred at **`listCharacters`**. This will typically reference a function or process that caused the error.
-1. Finally, you receive a more precise location of where the error occurred: you get the file name **`index.js`**, the line number `15`, and the character position `13` - which is denoted as **15:13**.
+1. Finally, you receive a more precise location of where the error occurred: you get the file name **`index.js`**, the line number **`15`**, and the character position **`13`** - which is denoted as **`15:13`**.
 1. There is one more line of information, but when you see `Script.runInContext` - you can recognize this is not a file or function you have worked with, so you can disregard this information for now. Always start by looking for the files you know you did work in.
 
 You will learn more about the concepts of "stacks" later. At this point, the most important takeaway is to read the error and be able to pick out the relevant information.

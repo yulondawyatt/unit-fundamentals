@@ -111,7 +111,6 @@ console.log(square(5));
 
 ```js
 // This will console log
-// If you are using repl.it a following value of `undefined` may show up
 console.log(helloPerson("Lev"));
 
 // If you try to assign a function's result to a variable, you will get undefined
@@ -130,7 +129,7 @@ function greeting(salutation = "Hello") {
 }
 ```
 
-Now, you can call `greeting()`, and it will still say `Hello, world!` or you can add your greeting.
+Now, you can call `greeting()`, and it will still say `Hello, world!` or you can add your own greeting as an argument.
 
 ```js
 greeting();

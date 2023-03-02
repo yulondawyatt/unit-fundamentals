@@ -65,7 +65,7 @@ Next, you will notice that many lines of code end with a `;` semi-colon. This is
 |     not      |     !     |
 |  underscore  |    \_     |
 
-If you would like to use as simple app to help you practice learning the names for these different characters, you can try [this app](http://www.karolinrafalski.com/characters/).
+If you would like to use as simple app to help you practice learning the names for these different characters, you can try [this app](http://www.karolinrafalski.com/characters/) (only works in a desktop browser).
 
 </details>
 
@@ -219,7 +219,9 @@ The `do something` will only happen `if` the value inside the parenthesis evalua
 
 ### Null
 
-Similar to `undefined` null is the absence of data. However, `null` is typically used when you want to be clear that there is no value. For example, when filling out a form, there may be inputs for a home phone number and a cellphone number. But if someone has just one number for both, the value of `null` would help explain that there is no value on purpose for the home phone number, rather than if someone forgot to fill out the field.
+Similar to `undefined` null is the absence of data. However, `null` is typically used when you want to be clear that there is no value.
+
+For example, when filling out a form, there may be inputs for a home phone number and a cellphone number. But if someone has just one number for both, the value of `null` would help explain that there is no value on purpose for the home phone number, rather than if someone forgot to fill out the field.
 
 ## Variables
 

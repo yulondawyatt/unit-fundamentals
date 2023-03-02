@@ -13,7 +13,7 @@ By the end of this lesson, you should be able to:
 
 - Which programming principles have you seen so far?
 
-- Which programming principals surprise you?
+- Which programming principals surprise you ?
 
 - As a class, create an array of `favoriteMovies`. Your instructor will then share this list.
 

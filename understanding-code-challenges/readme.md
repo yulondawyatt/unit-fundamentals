@@ -149,7 +149,7 @@ Some other JSDoc notation you may encounter:
 
 When working on larger applications, it quickly becomes impossible to manually check that all of your code is always working. To solve this problem, software developers write tests for their code. To write tests means to write code that verifies whether or not other code you've written is working.
 
-Although it can be a bit confusing to understand at first, testing is an incredibly powerful tool for ensuring your code works the way you want it to. Studies have been done that show that professional projects that use testing are able to add new features and grow faster than projects that don't use testing. And, for your duration at Pursuit, tests will play a big part of getting immediate feedback on the code you've written, especially early-on.
+Although it can be a bit confusing to understand at first, testing is an incredibly powerful tool for ensuring your code works the way you want it to and as you add features, testing will confirm if you have retained the previous functionality of your old code. Studies have been done that show that professional projects that use testing are able to add new features and grow faster than projects that don't use testing. And, for your duration at Pursuit, tests will play a big part of getting immediate feedback on the code you've written, especially early-on.
 
 The goal of this lesson is just to get you familiar with tests.
 
@@ -178,7 +178,7 @@ console.log(multiplyBy2(10));
 
 Is this code correct? No. There are many things wrong with it. Because it is short and simple, it is easy for you to evaluate this code and check it.
 
-Let's fix it. First, let's use our test case again.
+Let's fix it. First, let's add the JSDoc comments to help clarify what code we should write. It is better to think a lot and write a little: the more clarity you have about the code you plan to write, the smoother the process of writing code will be. Then, use our test case again.
 
 ```js
 /**
@@ -249,6 +249,8 @@ To test for the error message, you would have to write a new function. This ends
 ## Introduction to Jest
 
 Whenever coders run into similar problems over and over again, they will likely create a way to deal with them. A lot of this work is open-source-software - which is free to use and anyone can contribute to it. In coding, these projects are often referred to as libraries or frameworks.
+
+In this course we will use the testing library Jest, which will allow us to set up tests in a much simpler and more readable way.
 
 When you run Jest tests, you will receive output in your console that will tell you what functions are working and which are not. If something about your function is failing, you'll get additional details about what is wrong.
 
